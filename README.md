@@ -1,6 +1,8 @@
 # OpenTTD Stuff
 This repo contains (most of) my NewGRFs for OpenTTD. Currently there are two completed train GRFs and two WIP trains.
 
+![EB740 a Galliate](https://repository-images.githubusercontent.com/212970054/87da0a80-e867-11e9-88df-f40a359dda45)
+
 ## Completed
 * **E652**: A powerful electric locomotive for mixed traffic duties. [Wikipedia](http://it.wikipedia.org/wiki/Locomotiva_FS_E.652)
 * **EB 740** An electric railcar that is able to operate on its own, in multiple units or combined with normal railway coaches. [Wikipedia](https://it.wikipedia.org/wiki/Automotrice_FNM_E.740)
