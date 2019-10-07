@@ -1,0 +1,4 @@
+##grflangid 0x00
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :This is the second generation of the famous ALn668 diesel railcar built in 1981 by FIAT Ferroviaria (now Alstom). It can be coupled up to three units.
+STR_NAME_MYVEHICLE                                              :{TITLE}
