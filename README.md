@@ -1,6 +1,7 @@
 # OpenTTD Stuff
 This repo contains (most of) my NewGRFs for OpenTTD. Currently there are two completed train GRFs and two WIP trains.
 
+EB740 at Galliate station
 ![EB740 a Galliate](https://repository-images.githubusercontent.com/212970054/87da0a80-e867-11e9-88df-f40a359dda45)
 
 ## Completed
@@ -23,5 +24,6 @@ This repo contains (most of) my NewGRFs for OpenTTD. Currently there are two com
 * An interurban bus based on the Isuzu Turqoise or Otokar Navigo U
 
 * An urban bus based on the Bredamenarinibus 240L (9.7m) and 230M (12.5m)
+
 ---
 **DISCLAIMER**: I am a geology student, not a programmer and neither a pixel artist :wink:. So please apologise in advance and please report any bug :thumbsup:
