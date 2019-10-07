@@ -10,7 +10,7 @@ This repo contains (most of) my NewGRFs for OpenTTD. Currently there are two com
 ## Work in progress
 
 * **E444**: A fast electric locomotive for passenger trains. [Wikipedia](http://it.wikipedia.org/wiki/Locomotiva_FS_E.444)
-* **ALe582/642** A powerful EMU in 6 different configurations. [Wikipedia](https://it.wikipedia.org/wiki/Automotrice_FS_ALe.642)
+* **ALe582/642** A powerful EMU in 6 different configurations. [Wikipedia](https://it.wikipedia.org/wiki/Automotrice_FS_ALe_642)
 
 * **ALn668.3100**: A dirt cheap and reliable, 68-place diesel railcar. Can be coupled with maximum 3 other units. [Wikipedia](https://it.wikipedia.org/wiki/Automotrice_FS_ALn_668.3100)
 
