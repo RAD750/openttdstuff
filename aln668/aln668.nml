@@ -34,7 +34,7 @@ item(FEAT_TRAINS, item_aln668) {
         non_refittable_cargo_classes: bitmask();
         loading_speed:                8; 
         cost_factor:                  6;
-        running_cost_factor:          3;
+        running_cost_factor:          22;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        130 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
@@ -49,7 +49,7 @@ item(FEAT_TRAINS, item_aln668) {
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_DIESEL;
         extra_power_per_wagon:        0 kW;
-        tractive_effort_coefficient:  0.2 / 3;
+        tractive_effort_coefficient:  0.3 / 3;
         air_drag_coefficient:         0.06;
         //shorten_vehicle:              SHORTEN_TO_8_8;
         visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 2, DISABLE_WAGON_POWER);
