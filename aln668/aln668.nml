@@ -20,11 +20,11 @@ template tmpl_vehicle_8_views(num, reversed) {
 }
 
 /* Define the spritesets, these allow referring to these sprites later on */
-spriteset (aln668, "gfx/aln668.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (aln668_3100, "gfx/aln668_3100.png") { tmpl_vehicle_8_views(0, 0) }
 
-item(FEAT_TRAINS, item_aln668) {
+item(FEAT_TRAINS, item_aln668_3100) {
     property {
-        name:                         string(STR_NAME_MYVEHICLE);
+        name:                         string(STR_NAME_ALN668_3100);
         climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
         introduction_date:            date(1981, 1, 1);
         model_life:                   VEHICLE_NEVER_EXPIRES;
@@ -41,7 +41,7 @@ item(FEAT_TRAINS, item_aln668) {
         refit_cost:                   0;
         track_type:                   RAIL;
         ai_special_flag:              AI_FLAG_PASSENGER;
-        power:                        340 kW;
+        power:                        412 kW;
         running_cost_base:            RUNNING_COST_DIESEL;
         dual_headed:                  0;
         cargo_capacity:               68; 
@@ -51,13 +51,12 @@ item(FEAT_TRAINS, item_aln668) {
         extra_power_per_wagon:        0 kW;
         tractive_effort_coefficient:  0.3 / 3;
         air_drag_coefficient:         0.06;
-        //shorten_vehicle:              SHORTEN_TO_8_8;
         visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon:       0 ton;
         bitmask_vehicle_info:         0;
     }
     graphics {
-        default:                      aln668;
+        default:                      aln668_3100;
     }
 }
 
