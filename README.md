@@ -10,7 +10,7 @@ EB740 at Galliate station.
 
 ## Work in progress
 
-* **ATR115/125 (Stadler GTW 2/6 and 4/12 DMUs) of Trenord
+* **ATR115/125** (Stadler GTW 2/6 and 4/12 DMUs) of Trenord
 * **E444**: A fast electric locomotive for passenger trains. [Wikipedia](http://it.wikipedia.org/wiki/Locomotiva_FS_E.444)
 * **ALe582/642** A powerful EMU in 6 different configurations. [Wikipedia](https://it.wikipedia.org/wiki/Automotrice_FS_ALe_642)
 
