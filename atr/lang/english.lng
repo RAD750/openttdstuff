@@ -1,0 +1,9 @@
+##grflangid 0x01
+
+STR_GRF_NAME                 : {TITLE}
+STR_GRF_DESCRIPTION          : This NewGRF contains the two models of Stadler GTW that Trenord operates: the ATR 115 (GTW 2/6) and ATR125 (GTW 4/12)
+
+STR_ATR115_NAME                 :ATR 115
+STR_ATR125_NAME                 :ATR 125
+STR_ATR115_CANNOT_START         :Train too long (maximum 3 DMUs in multiple unit)
+STR_ATR115_CANNOT_ATTACH_OTHER  :Can only couple ATRs together.

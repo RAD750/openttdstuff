@@ -1,0 +1,171 @@
+grf {
+	grfid: "JC\01\05";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESCRIPTION);
+	version: 0;
+	min_compatible_version: 0;
+}
+railtypetable {
+    RAIL
+}
+
+
+template tmpl_vehicle_basic(x, y) {
+
+    [x,      y,  8, 24,  -3, -12] //xpos ypos xsize ysize xrel yrel
+    [x +  9, y, 22, 20, -14, -12]
+    [x + 32, y, 32, 16, -16, -12]
+    [x + 65, y, 22, 20,  -6, -12]
+}
+
+template tmpl_vehicle_8_views(num, reversed) {
+    tmpl_vehicle_basic(reversed ? 89 : 1, 1 + 32 * num)
+    tmpl_vehicle_basic(reversed ? 1 : 89, 1 + 32 * num)
+}
+
+template tmpl_vehicle_single(num, xsize, ysize, xoff, yoff) {
+    [1, 1 + 32 * num, xsize, ysize, xoff, yoff]
+}
+
+spriteset (set_atr115_front_lighted,  "gfx/atr.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_atr115_rear_lighted,   "gfx/atr.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_atr125_middle,         "gfx/atr.png") { tmpl_vehicle_8_views(2, 1) }
+spriteset (set_atr125_middle_flipped, "gfx/atr.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_atr115_middle,         "gfx/atr.png") { tmpl_vehicle_8_views(4, 1) }
+spriteset (set_atr115_purchase,       "gfx/atr.png") { tmpl_vehicle_single(5, 53, 14, -25, -10) }
+
+switch(FEAT_TRAINS, SELF, sw_atr115_graphics, position_in_consist % 3) {
+    0:      set_atr115_front_lighted;
+    2:      set_atr115_rear_lighted;
+    set_atr115_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_atr125_graphics, position_in_vehid_chain % 6) {
+    0:      set_atr115_front_lighted;
+    1:      set_atr115_middle;
+    2:      set_atr125_middle;
+    3:      set_atr125_middle_flipped;
+    4:      set_atr115_middle;
+    5:      set_atr115_rear_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_atr115_articulated_part, extra_callback_info1) {
+    1 .. 2: return item_atr115;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_atr125_articulated_part, extra_callback_info1) {
+    1 .. 5: return item_atr125;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_atr115_start_stop, num_vehs_in_consist) {
+    1 .. 9: return CB_RESULT_NO_TEXT;
+    return string(STR_ATR115_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_atr115_can_attach_wagon, vehicle_type_id) {
+    item_atr115: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_ATR115_CANNOT_ATTACH_OTHER);
+}
+
+switch(FEAT_TRAINS, SELF, sw_atr115_length, position_in_consist  % 3) {
+    1: return 3;
+       return 8;
+}
+
+switch(FEAT_TRAINS, SELF, sw_atr125_length, position_in_consist  % 6) {
+    1: return 3;
+    2: return 6;
+    3: return 6;
+    4: return 3;
+       return 8;
+}
+
+item(FEAT_TRAINS, item_atr115) {
+    property {
+        name:                         string(STR_ATR115_NAME);
+        // not available in toyland:
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2011, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                6; 
+        cost_factor:                  45;
+        running_cost_factor:          100;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        140 km/h; 
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        580 kW;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               35; 
+        weight:                       67 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_atr115_graphics;
+        purchase:                     set_atr115_purchase;
+        start_stop:                   sw_atr115_start_stop;
+        articulated_part:             sw_atr115_articulated_part;
+        can_attach_wagon:             sw_atr115_can_attach_wagon;
+        length:                       sw_atr115_length;
+    }
+}
+
+item(FEAT_TRAINS, item_atr125) {
+    property {
+        name:                         string(STR_ATR125_NAME);
+        // not available in toyland:
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2011, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                6; 
+        cost_factor:                  45;
+        running_cost_factor:          100;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        140 km/h; 
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        1160 kW;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               39; 
+        weight:                       136 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_atr125_graphics;
+        purchase:                     set_atr115_purchase;
+        start_stop:                   sw_atr115_start_stop;
+        articulated_part:             sw_atr125_articulated_part;
+        can_attach_wagon:             sw_atr115_can_attach_wagon;
+        length:                       sw_atr125_length;
+    }
+}

@@ -1,0 +1,9 @@
+##grflangid 0x27
+
+STR_GRF_NAME                 : {TITLE}
+STR_GRF_DESCRIPTION          :Questa NewGRF contiene i due Stadler GTW che Trenord utilizza: l'ATR 115 (GTW 2/6) e ATR 125 (GTW 4/12)
+
+STR_ATR115_NAME                 :ATR 115
+STR_ATR125_NAME                 :ATR 125
+STR_ATR115_CANNOT_START         :Treno troppo lungo (max 3 ATR in comando multiplo)
+STR_ATR115_CANNOT_ATTACH_OTHER  :Si possono agganciare solo ATR tra loro

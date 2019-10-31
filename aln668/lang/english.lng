@@ -2,3 +2,5 @@
 STR_GRF_NAME                                                    :{TITLE} {VERSION}
 STR_GRF_DESCRIPTION                                             :A pack of ALn668 diesel railcar built by FIAT Ferroviaria (now Alstom). Will contain the 1200, 1400, 1500 and 3100 series. For now, it only contains the 3100 series.
 STR_NAME_ALN668_3100                                            :{ALN668_3100}
+STR_ALN668_3100_NO_ALTRI_VAGONI                                 :Cannot couple railcars to other rolling stock!
+STR_ALN668_3100_TROPPO_LUNGA                                    :Maximum of 3 railcars in multiple unit configuration for the 3100 series!

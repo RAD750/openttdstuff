@@ -2,3 +2,5 @@
 STR_GRF_NAME                                                    :{TITLE} {VERSION}
 STR_GRF_DESCRIPTION                                             :Pack di automotrici ALn668. Contiene la serie 1200 (livrea XMPR), 1500 (XMPR), 1400 (grigio pergamena), 3100 (Trenord)
 STR_NAME_ALN668_3100                                            :{ALN668_3100}
+STR_ALN668_3100_NO_ALTRI_VAGONI                                 :Impossibile agganciare altri rotabili alle automotrici!
+STR_ALN668_3100_TROPPO_LUNGA                                    :Massimo 3 ALn668.3100 in unità multipla!
