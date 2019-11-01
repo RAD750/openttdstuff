@@ -1,3 +1,4 @@
 push.sh
 **/.nmlcache
 *.grf
+/bin

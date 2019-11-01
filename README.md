@@ -7,14 +7,19 @@ EB740 at Galliate station.
 ## Completed
 * **E652**: A powerful electric locomotive for mixed traffic duties. [Wikipedia](http://it.wikipedia.org/wiki/Locomotiva_FS_E.652)
 * **EB 740** An electric railcar that is able to operate on its own, in multiple units or combined with normal railway coaches. [Wikipedia](https://it.wikipedia.org/wiki/Automotrice_FNM_E.740)
+* **ATR115/125** (Stadler GTW 2/6 and 4/12 DMUs) of Trenord [Wikipedia ATR115](https://it.wikipedia.org/wiki/Autotreno_TN_ATR_115) [Wikipedia ATR125](https://it.wikipedia.org/wiki/Autotreno_TN_ATR_125)
 
 ## Work in progress
 
-* **ATR115/125** (Stadler GTW 2/6 and 4/12 DMUs) of Trenord
 * **E444**: A fast electric locomotive for passenger trains. [Wikipedia](http://it.wikipedia.org/wiki/Locomotiva_FS_E.444)
 * **ALe582/642** A powerful EMU in 6 different configurations. [Wikipedia](https://it.wikipedia.org/wiki/Automotrice_FS_ALe_642)
 
-* **ALn668.3100**: A dirt cheap and reliable, 68-place diesel railcar. Can be coupled with maximum 3 other units. [Wikipedia](https://it.wikipedia.org/wiki/Automotrice_FS_ALn_668.3100).
+* **ALn668 Set**: A dirt cheap and reliable, 68-place diesel railcar, in various versions Can be coupled with maximum 2 or 3 other units depending on version. [Wikipedia](https://it.wikipedia.org/wiki/Automotrice_FS_ALn_668).
+Planned versions:
+	* ALn668.1200 (third generation) in XMPR livery
+	* ALn668.1400 (first generation) in yellow livery
+	* ALn668.1500 (second generation) in blue-grey-red livery
+	* ALn668.3100 (third generation) in Trenord livery
 
 ## Planned
 
