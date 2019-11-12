@@ -1,0 +1,5 @@
+##grflangid 0x00
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :{TITLE} is a diesel locomotive designed by Electro-Motive Diesel and built in Sweden by Nydqvist och Holm A.B. (NoHAB). This NewGRF includes both the 'A' version (for freight traffic) and the 'B' version (for passenger duties).
+STR_NAME_NOHAB_A                                             :{TITLE} 'A'
+STR_NAME_NOHAB_B                                             :{TITLE} 'B'

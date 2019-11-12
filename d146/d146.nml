@@ -1,0 +1,58 @@
+grf {
+	grfid: "JC\03\01";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESCRIPTION);
+	version: 0;
+	min_compatible_version: 0;
+}
+railtypetable {
+    RAIL
+}
+template tmpl_vehicle_basic(x, y) {
+    [x,      y,  8, 24,  -3, -12]
+    [x +  9, y, 22, 20, -14, -12]
+    [x + 32, y, 32, 16, -16, -12]
+    [x + 65, y, 22, 20,  -6, -12]
+}
+template tmpl_vehicle_8_views(num, reversed) {
+    tmpl_vehicle_basic(reversed ? 89 : 1, 1 + 32 * num)
+    tmpl_vehicle_basic(reversed ? 1 : 89, 1 + 32 * num)
+}
+
+/* Define the spritesets, these allow referring to these sprites later on */
+spriteset (d146, "gfx/d146.png") { tmpl_vehicle_8_views(0, 0) }
+
+item(FEAT_TRAINS, item_d146) {
+    property {
+        name:                         string(STR_NAME_MYVEHICLE);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2002, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            10;
+        non_refittable_cargo_classes: bitmask();
+        cost_factor:                  25;
+        running_cost_factor:          90;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        120 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        power:                        1000 kW;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               0; 
+        weight:                       72 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.6 / 3;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      d146;
+    }
+}
+

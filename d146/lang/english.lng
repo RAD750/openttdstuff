@@ -1,0 +1,4 @@
+##grflangid 0x00
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :{TITLE} is a diesel locomotive for heavy shunting duties and light line duties
+STR_NAME_MYVEHICLE                                              :{TITLE}
