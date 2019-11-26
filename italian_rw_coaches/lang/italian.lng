@@ -1,0 +1,19 @@
+##grflangid 0x27
+
+STR_GRF_NAME                 :{TITLE}
+STR_GRF_DESCRIPTION          :Questa NewGRF è un pacchetto di carrozze ferroviarie italiane.{}Include:{}* Carrozza Piano Ribassato (PR){}* Carrozza Casaralta (ADP){}* Carrozze Medie Distanze (MDVE/MDVC){}* Carrozza UIC-X DTR{}* Carrozza UIC-Z DPLH{}* Carrozza Vivalto IIa serie (CDPTR)
+
+STR_PR_NAME                     :Carr. Piano Ribassato
+STR_PR_PILOTA464_NAME           :Pilota PR revamp
+STR_PR_PILOTA_FARINI_NAME       :Pilota PR Farini
+STR_CASARALTA_NAME              :Carr. Casaralta
+STR_CASARALTA_PILOTA_NAME       :Pilota Casaralta
+STR_MDVE_NAME                   :Carr. MDVE
+STR_MDVC_NAME                   :Carr. MDVC
+STR_MDVC_PILOTA_PASSANTE_NAME   :Pilota MD passante
+STR_MDVC_PILOTA_MAZINGA_NAME    :Pilota MD Mazinga
+STR_UICX_DTR_NAME               :Carr. UIC-X DTR
+STR_UICX_DTR_PILOTA_NAME        :Pilota UIC-X
+STR_UICZ_DPLH_NAME              :Carr. UIC-Z DPLH
+STR_CESSALTO_NAME               :Carr. Vivalto CDPTR
+STR_CESSALTO_PILOTA_NAME        :Pilota Vivalto

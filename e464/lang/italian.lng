@@ -1,0 +1,4 @@
+##grflangid 0x27
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :La {TITLE} è una locomotiva monocabina progettata per treni suburbani e regionali. È uno dei gruppi più numerosi in Europa, con 717 esemplari prodotti (716 operativi).
+STR_NAME_MYVEHICLE                                              :{TITLE}

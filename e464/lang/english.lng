@@ -1,0 +1,4 @@
+##grflangid 0x00
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :The {TITLE} is an electric locomotive with only one cab, intended for use with regional and suburban trains. It is one of the most mass-produced locomotives in Europe, with 717 examples produced (716 in operation).
+STR_NAME_MYVEHICLE                                              :{TITLE}
