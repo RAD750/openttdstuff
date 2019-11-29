@@ -1,0 +1,11 @@
+##grflangid 0x00
+STR_GRF_NAME                                                    :{ALE582}/{ALE642} {VERSION}
+STR_GRF_DESCRIPTION                                             :The {ALE582} and {ALE642} are EMUs produced in 1987 and 1991 respectively, intended for commuter service. They use a DC chopper motor control.
+STR_NAME_582_M_SP                                               :{ALE582} (M+DT)
+STR_NAME_582_M_R_SP                                             :{ALE582} (M+T+DT)
+STR_NAME_582_M_R_R_SP                                           :{ALE582} (M+T+T+DT)
+STR_NAME_642_M_R_M                                              :{ALE642} (M+T+M)
+STR_NAME_642_M_R_R_M                                            :{ALE642} (M+T+T+M)
+STR_NAME_642_M_R_R_R_M                                          :{ALE642} (M+T+T+T+M)
+STR_ALE_CANNOT_ATTACH_OTHER                                     :It is not possible to couple other wagons!
+STR_ALE_CANNOT_START                                            :Multiple unit operation is not supported!
