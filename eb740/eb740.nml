@@ -22,7 +22,12 @@ template tmpl_vehicle_8_views(num, reversed) {
 /* Define the spritesets, these allow referring to these sprites later on */
 spriteset (eb740, "gfx/eb740.png") { tmpl_vehicle_8_views(0, 0) }
 
-item(FEAT_TRAINS, item_tigre) {
+/*Suono partenza*/
+switch(FEAT_TRAINS, SELF, sw_eb740_sound, getbits(extra_callback_info1, 0, 8)) {
+    SOUND_EVENT_START: sound("sound/eb740.wav");
+}
+
+item(FEAT_TRAINS, item_eb740) {
     property {
         name:                         string(STR_NAME_MYVEHICLE);
         climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
@@ -49,7 +54,7 @@ item(FEAT_TRAINS, item_tigre) {
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
-        tractive_effort_coefficient:  0.3 / 3;
+        tractive_effort_coefficient:  0.2 / 3;
         air_drag_coefficient:         0.06;
         //shorten_vehicle:              SHORTEN_TO_8_8;
         visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
@@ -57,6 +62,7 @@ item(FEAT_TRAINS, item_tigre) {
         bitmask_vehicle_info:         0;
     }
     graphics {
+        sound_effect:                 sw_eb740_sound;
         default:                      eb740;
     }
 }

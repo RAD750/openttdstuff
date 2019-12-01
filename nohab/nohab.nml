@@ -22,6 +22,11 @@ template tmpl_vehicle_8_views(num, reversed) {
 /* Define the spritesets, these allow referring to these sprites later on */
 spriteset (nohab, "gfx/nohab.png") { tmpl_vehicle_8_views(0, 0) }
 
+/*Suono partenza*/
+switch(FEAT_TRAINS, SELF, sw_nohab_sound, getbits(extra_callback_info1, 0, 8)) {
+    SOUND_EVENT_START: sound("sound/emd567c.wav");
+}
+
 item(FEAT_TRAINS, item_nohab_a) {
     property {
         name:                         string(STR_NAME_NOHAB_A);
@@ -53,6 +58,7 @@ item(FEAT_TRAINS, item_nohab_a) {
     }
     graphics {
         default:                      nohab;
+        sound_effect:                 sw_nohab_sound;
     }
 }
 
@@ -87,6 +93,7 @@ item(FEAT_TRAINS, item_nohab_b) {
     }
     graphics {
         default:                      nohab;
+        sound_effect:                 sw_nohab_sound;
     }
 }
 
