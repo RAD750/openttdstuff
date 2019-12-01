@@ -24,14 +24,14 @@ spriteset (E464, "gfx/E464.png") { tmpl_vehicle_8_views(0, 0) }
 
 /*Suono partenza*/
 switch(FEAT_TRAINS, SELF, sw_e464_sound, getbits(extra_callback_info1, 0, 8)) {
-    SOUND_EVENT_START: sound("sound/partenza.wav");
+    SOUND_EVENT_START: sound("sound/464.wav");
 }
 
 item(FEAT_TRAINS, item_E464) {
     property {
         name:                         string(STR_NAME_MYVEHICLE);
         climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
-        introduction_date:            date(1951, 1, 1);
+        introduction_date:            date(1998, 1, 1);
         model_life:                   VEHICLE_NEVER_EXPIRES;
         vehicle_life:                 40;
         reliability_decay:            40;
@@ -53,7 +53,7 @@ item(FEAT_TRAINS, item_E464) {
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
-        tractive_effort_coefficient:  0.3 / 4;
+        tractive_effort_coefficient:  0.8 / 4;
         visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon:       0 ton;
         bitmask_vehicle_info:         0;

@@ -147,6 +147,7 @@ item(FEAT_TRAINS, item_ale582_M_SP) {
         reliability_decay:            40;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
+        loading_speed:                14; 
         cost_factor:                  17;
         running_cost_factor:          30;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
@@ -187,6 +188,7 @@ item(FEAT_TRAINS, item_ale582_M_R_SP) {
         reliability_decay:            40;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
+        loading_speed:                14; 
         cost_factor:                  23;
         running_cost_factor:          31;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
@@ -227,6 +229,7 @@ item(FEAT_TRAINS, item_ale582_M_R_R_SP) {
         reliability_decay:            40;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
+        loading_speed:                14; 
         cost_factor:                  27;
         running_cost_factor:          32;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
@@ -267,6 +270,7 @@ item(FEAT_TRAINS, item_ale642_M_R_M) {
         reliability_decay:            45;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
+        loading_speed:                14; 
         cost_factor:                  27;
         running_cost_factor:          40;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
@@ -307,6 +311,7 @@ item(FEAT_TRAINS, item_ale642_M_R_R_M) {
         reliability_decay:            45;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
+        loading_speed:                14; 
         cost_factor:                  34;
         running_cost_factor:          42;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
@@ -347,6 +352,7 @@ item(FEAT_TRAINS, item_ale642_M_R_R_R_M) {
         reliability_decay:            45;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
+        loading_speed:                14; 
         cost_factor:                  39;
         running_cost_factor:          44;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;

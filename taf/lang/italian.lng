@@ -1,0 +1,6 @@
+##grflangid 0x27
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :L' {TITLE} è un'elettrotreno a due piani per servizio suburbano.
+STR_NAME_TAF                                                    :ALe426/506 'TAF'
+STR_TAF_CANNOT_ATTACH_OTHER                                     :Impossibile agganciare altri vagoni!
+STR_TAF_CANNOT_START                                            :Massimo di due TAF in unità multipla!
