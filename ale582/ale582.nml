@@ -160,7 +160,7 @@ item(FEAT_TRAINS, item_ale582_M_SP) {
         running_cost_base:            RUNNING_COST_ELECTRIC;
         dual_headed:                  0;
         cargo_capacity:               57; 
-        weight:                       57 ton;
+        weight:                       94 ton; //57+37
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -201,7 +201,7 @@ item(FEAT_TRAINS, item_ale582_M_R_SP) {
         running_cost_base:            RUNNING_COST_ELECTRIC;
         dual_headed:                  0;
         cargo_capacity:               68; 
-        weight:                       57 ton;
+        weight:                       127 ton; //57+33+37 ton
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -242,7 +242,7 @@ item(FEAT_TRAINS, item_ale582_M_R_R_SP) {
         running_cost_base:            RUNNING_COST_ELECTRIC;
         dual_headed:                  0;
         cargo_capacity:               73; 
-        weight:                       57 ton;
+        weight:                       160 ton; //57+33+33+37 ton
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -283,7 +283,7 @@ item(FEAT_TRAINS, item_ale642_M_R_M) {
         running_cost_base:            RUNNING_COST_ELECTRIC;
         dual_headed:                  0;
         cargo_capacity:               68; 
-        weight:                       57 ton;
+        weight:                       147 ton; //57+33+57 ton
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -324,7 +324,7 @@ item(FEAT_TRAINS, item_ale642_M_R_R_M) {
         running_cost_base:            RUNNING_COST_ELECTRIC;
         dual_headed:                  0;
         cargo_capacity:               93; 
-        weight:                       57 ton;
+        weight:                       180 ton; //57+33+33+57 ton
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -365,7 +365,7 @@ item(FEAT_TRAINS, item_ale642_M_R_R_R_M) {
         running_cost_base:            RUNNING_COST_ELECTRIC;
         dual_headed:                  0;
         cargo_capacity:               71; 
-        weight:                       57 ton;
+        weight:                       213 ton; //57+33+33+33+57 ton
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
