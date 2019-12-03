@@ -80,8 +80,8 @@ Table key:
 |Pilota MDVC piatta|Kiiw||:heavy_check_mark:|Italian Railway Coaches|
 |Pilota MDVC Mazinga|||:fire:||
 |MDVE|Kiiw|[MDVE](https://it.wikipedia.org/wiki/Carrozze_FS_tipo_MDVE)|:x:||
-|Casaralta|Kiiw| |:heavy_check_mark|Italian Railway Coaches|
-|Pilota Casaralta|Kiiw| |:heavy_check_mark|Italian Railway Coaches|
+|Casaralta|Kiiw| |:heavy_check_mark:|Italian Railway Coaches|
+|Pilota Casaralta|Kiiw| |:heavy_check_mark:|Italian Railway Coaches|
 |UIC-X DTR|lego11|[UIC-X](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-X)|:heavy_check_mark:|Italian Railway Coaches|
 |UIC-Z DPLH|lego11|[UIC-X](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-Z1)|:heavy_check_mark:|Italian Railway Coaches|
 |Vivalto (CDPTR)|lego11|[CDPTR](http://italy.hitachirail.com/carrozza-cdptr_421.html)|:heavy_check_mark:|Italian Railway Coaches|
