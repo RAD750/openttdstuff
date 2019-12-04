@@ -83,7 +83,7 @@ Table key:
 |Casaralta|Kiiw| |:heavy_check_mark:|Italian Railway Coaches|
 |Pilota Casaralta|Kiiw| |:heavy_check_mark:|Italian Railway Coaches|
 |UIC-X DTR|lego11|[UIC-X](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-X)|:heavy_check_mark:|Italian Railway Coaches|
-|UIC-Z DPLH|lego11|[UIC-X](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-Z1)|:heavy_check_mark:|Italian Railway Coaches|
+|UIC-Z DPLH|lego11|[UIC-Z1](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-Z1)|:heavy_check_mark:|Italian Railway Coaches|
 |Vivalto (CDPTR)|lego11|[CDPTR](http://italy.hitachirail.com/carrozza-cdptr_421.html)|:heavy_check_mark:|Italian Railway Coaches|
 |Pilota Vivalto|Kiiw||:heavy_check_mark:|Italian Railway Coaches|
 
