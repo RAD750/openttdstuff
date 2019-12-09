@@ -2,8 +2,11 @@
 This repo contains (most of) my NewGRFs for OpenTTD. Currently there are two completed train GRFs and two WIP trains.
 Some of the textures have been made by Gabriele (Kiiw) who I dearly thank for his work :)
 
-EB740 at Galliate station.
+EB740 at Galliate station with suburban trains
 ![EB740 a Galliate](https://repository-images.githubusercontent.com/212970054/87da0a80-e867-11e9-88df-f40a359dda45)
+
+E.444R.051 pulls IC 1562 near Alassio on the Genova-Ventimiglia single track line
+![E444 ad Alassio](https://user-images.githubusercontent.com/12469744/70423296-826a8d80-1a6d-11ea-8d1f-397488df5024.png)
 
 > All released NewGRFs are on BaNaNaS!!
 
@@ -86,6 +89,15 @@ Table key:
 |UIC-Z DPLH|lego11|[UIC-Z1](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-Z1)|:heavy_check_mark:|Italian Railway Coaches|
 |Vivalto (CDPTR)|lego11|[CDPTR](http://italy.hitachirail.com/carrozza-cdptr_421.html)|:heavy_check_mark:|Italian Railway Coaches|
 |Pilota Vivalto|Kiiw||:heavy_check_mark:|Italian Railway Coaches|
+
+#### Luggage cars
+Can be refitted to carry either mail, goods or valuables. In the future, the running cost when carrying valuables will increase as you'll need an escort.
+Both kinds of luggage cars carry exactly the same amount of cargo, the only difference being the top speed and the cost.
+
+|Name|Textures by|Real life info|Status|GRF Name|
+|---|---|---|---|---|
+|UIC-X luggage car|Kiiw|[UIC-X](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-X)|:heavy_check_mark:|Italian Railway Coaches|
+|UIC-Z luggage car|Kiiw|[UIC-Z1](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-Z1)|:heavy_check_mark:|Italian Railway Coaches|
 
 ---
 **DISCLAIMER**: I am a geology student, not a programmer and neither a pixel artist :wink:. So please apologise in advance and please report any bug :thumbsup:
