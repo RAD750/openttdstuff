@@ -87,5 +87,13 @@ Table key:
 |Vivalto (CDPTR)|lego11|[CDPTR](http://italy.hitachirail.com/carrozza-cdptr_421.html)|:heavy_check_mark:|Italian Railway Coaches|
 |Pilota Vivalto|Kiiw||:heavy_check_mark:|Italian Railway Coaches|
 
+#### Luggage cars
+Can be refitted to carry either mail, goods or valuables. In the future, the running cost when carrying valuables will increase as you'll need an escort.
+Both kinds of luggage cars carry exactly the same amount of cargo, the only difference being the top speed and the cost.
+|Name|Textures by|Real life info|Status|GRF Name|
+|---|---|---|---|---|
+|UIC-X luggage car|Kiiw|[UIC-X](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-X)|:heavy_check_mark:|Italian Railway Coaches|
+|UIC-Z luggage car|Kiiw|[UIC-Z1](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-Z1)|:heavy_check_mark:|Italian Railway Coaches|
+
 ---
 **DISCLAIMER**: I am a geology student, not a programmer and neither a pixel artist :wink:. So please apologise in advance and please report any bug :thumbsup:
