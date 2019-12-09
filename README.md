@@ -2,8 +2,11 @@
 This repo contains (most of) my NewGRFs for OpenTTD. Currently there are two completed train GRFs and two WIP trains.
 Some of the textures have been made by Gabriele (Kiiw) who I dearly thank for his work :)
 
-EB740 at Galliate station.
+EB740 at Galliate station with suburban trains
 ![EB740 a Galliate](https://repository-images.githubusercontent.com/212970054/87da0a80-e867-11e9-88df-f40a359dda45)
+
+E.444R.051 pulls IC 1562 near Alassio on the Genova-Ventimiglia single track line
+![E444 ad Alassio](https://user-images.githubusercontent.com/12469744/70423296-826a8d80-1a6d-11ea-8d1f-397488df5024.png)
 
 > All released NewGRFs are on BaNaNaS!!
 
