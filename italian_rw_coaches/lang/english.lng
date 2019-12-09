@@ -13,7 +13,9 @@ STR_MDVC_NAME                   :Carr. MDVC
 STR_MDVC_PILOTA_PASSANTE_NAME   :Pilota MD passante
 STR_MDVC_PILOTA_MAZINGA_NAME    :Pilota MD Mazinga
 STR_UICX_DTR_NAME               :Carr. UIC-X DTR
+STR_UICX_BAGA_NAME              :UIC-X luggage car
 STR_UICX_DTR_PILOTA_NAME        :Pilota UIC-X
-STR_UICZ_DPLH_NAME              :Carr. UIC-Z DPLH
+STR_UICZ_DPLH_NAME              :Carr. UIC-Z 
+STR_UICZ_BAGA_NAME              :UIC-Z luggage car
 STR_CESSALTO_NAME               :Carr. Vivalto CDPTR
 STR_CESSALTO_PILOTA_NAME        :Pilota Vivalto
