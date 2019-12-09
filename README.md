@@ -90,6 +90,7 @@ Table key:
 #### Luggage cars
 Can be refitted to carry either mail, goods or valuables. In the future, the running cost when carrying valuables will increase as you'll need an escort.
 Both kinds of luggage cars carry exactly the same amount of cargo, the only difference being the top speed and the cost.
+
 |Name|Textures by|Real life info|Status|GRF Name|
 |---|---|---|---|---|
 |UIC-X luggage car|Kiiw|[UIC-X](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-X)|:heavy_check_mark:|Italian Railway Coaches|
