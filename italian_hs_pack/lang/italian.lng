@@ -1,0 +1,12 @@
+##grflangid 0x27
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :L' {TITLE} è un pacchetto di treni ad alta velocità italiani.
+STR_CANNOT_ATTACH_OTHER                                         :Impossibile agganciare altri vagoni!
+STR_ETR575_CANNOT_START                                         :Composizione doppia non supportata!
+STR_NAME_ALE601_ORI                                             :ALe601 (Originale)
+STR_NAME_ALE601_AV                                              :ALe601 (Rapporto lungo)
+STR_NAME_ETR460                                                 :ETR460 'Pendolino'
+STR_NAME_ETR575                                                 :ETR575 '.italo'
+STR_NAME_ETR500                                                 :ETR500 'Frecciarossa'
+STR_NAME_ETR400                                                 :ETR400 'Frecciarossa 1000'
+STR_NAME_ETR700                                                 :ETR700 'Fyra'
