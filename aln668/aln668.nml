@@ -133,7 +133,7 @@ item(FEAT_TRAINS, item_aln668_1200) {
         cost_factor:                  5.8;
         running_cost_factor:          20;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
-        speed:                        110 km/h;
+        speed:                        68 mph;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
         track_type:                   RAIL;
@@ -174,7 +174,7 @@ item(FEAT_TRAINS, item_aln668_1400) {
         cost_factor:                  7;
         running_cost_factor:          22;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
-        speed:                        110 km/h;
+        speed:                        68 mph;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
         track_type:                   RAIL;
@@ -205,17 +205,17 @@ item(FEAT_TRAINS, item_aln668_1800) {
     property {
         name:                         string(STR_NAME_ALN668_1800);
         climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
-        introduction_date:            date(1956, 1, 1);
+        introduction_date:            date(1970, 1, 1);
         model_life:                   VEHICLE_NEVER_EXPIRES;
         vehicle_life:                 40;
-        reliability_decay:            20;
+        reliability_decay:            15;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                8; 
         cost_factor:                  6.5;
         running_cost_factor:          21;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
-        speed:                        110 km/h;
+        speed:                        68 mph;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
         track_type:                   RAIL;
