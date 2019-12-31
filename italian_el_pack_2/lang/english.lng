@@ -1,0 +1,8 @@
+##grflangid 0x00
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :The {TITLE} represents the second generation of Italian electric railway locomotives, those powered by 3kV DC and with rheostatic controls.
+STR_NAME_E424                                                   :E 424
+STR_NAME_E424N                                                  :E 424 'Navetta' (Shuttle)
+STR_NAME_E326                                                   :E 326
+STR_NAME_E626                                                   :E 626
+STR_NAME_E625                                                   :E 625

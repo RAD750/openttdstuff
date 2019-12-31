@@ -1,0 +1,8 @@
+##grflangid 0x27
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :L' {TITLE} contiene la seconda generazione di locomotive italiane, quelle alimentate a 3kV in corrente continua e con azionamento reostatico.
+STR_NAME_E424                                                   :E 424
+STR_NAME_E424N                                                  :E 424 'Navetta'
+STR_NAME_E326                                                   :E 326
+STR_NAME_E626                                                   :E 626
+STR_NAME_E625                                                   :E 625
