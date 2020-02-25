@@ -1,0 +1,10 @@
+##grflangid 0x27
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :L' {TITLE} contiene la terza generazione di locomotive italiane, quelle alimentate a 3kV in corrente continua e con azionamento chopper. Sono anche incluse le E492/491 "Senapine", alimentate a 25 kV AC 50 Hz, che non sono mai entrate in servizio (il suono è quindi un'elaborazione personale e non quello vero ;).
+STR_NAME_E491                                                   :E 491 "Senapina"
+STR_NAME_E492                                                   :E 492 "Senapina"
+STR_NAME_E620                                                   :E 620 "Tigrotto"
+STR_NAME_E652                                                   :E 652 "Tigrone"
+STR_NAME_E652MIR                                                :E 652 "Tigrone Mercitalia"
+STR_NAME_E632                                                   :E 632 "Tigre"
+STR_NAME_E633                                                   :E 633 "Tigre"

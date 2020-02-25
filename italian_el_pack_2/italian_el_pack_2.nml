@@ -19,16 +19,71 @@ template tmpl_vehicle_8_views(num, reversed) {
     tmpl_vehicle_basic(reversed ? 1 : 89, 1 + 32 * num)
 }
 
+template tmpl_vehicle_single(num, xsize, ysize, xoff, yoff) {
+    [1, 1 + 32 * num, xsize, ysize, xoff, yoff]
+}
+
 /* Define the spritesets, these allow referring to these sprites later on */
 spriteset (E424, "gfx/424.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (E424N, "gfx/424N.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (E326, "gfx/326.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (E626, "gfx/626.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (E646_a, "gfx/646.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (E646_b, "gfx/646.png") { tmpl_vehicle_8_views(1, 0) }
+spriteset (E646_p, "gfx/646.png") { tmpl_vehicle_single(5, 53, 14, -25, -10) }
+spriteset (E656_a, "gfx/656.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (E656_b, "gfx/656.png") { tmpl_vehicle_8_views(1, 0) }
+spriteset (E656_p, "gfx/656.png") { tmpl_vehicle_single(5, 53, 14, -25, -10) }
+spriteset (E624, "gfx/624.png") { tmpl_vehicle_8_views(0, 0) }
 
 /*Suono partenza*/
 switch(FEAT_TRAINS, SELF, sw_424_sound, getbits(extra_callback_info1, 0, 8)) {
     SOUND_EVENT_START: sound("sound/424.wav");
 }
+
+switch(FEAT_TRAINS, SELF, sw_624_sound, getbits(extra_callback_info1, 0, 8)) {
+    SOUND_EVENT_START: sound("sound/624.wav");
+}
+
+switch(FEAT_TRAINS, SELF, sw_656_sound, getbits(extra_callback_info1, 0, 8)) {
+    SOUND_EVENT_START: sound("sound/656.wav");
+}
+
+/*646-645 articolata*/
+switch(FEAT_TRAINS, SELF, sw_E646_graphics, position_in_consist % 2) {
+    0:      E646_a;
+    1:      E646_b;
+}
+switch(FEAT_TRAINS, SELF, sw_E646_articulated_part, extra_callback_info1) {
+    1 .. 1: return item_E646;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, sw_E645_articulated_part, extra_callback_info1) {
+    1 .. 1: return item_E645;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, sw_E646_length, position_in_consist  % 2) {
+       return 5;
+}
+
+/*656-655 articolata*/
+switch(FEAT_TRAINS, SELF, sw_E656_graphics, position_in_consist % 2) {
+    0:      E656_a;
+    1:      E656_b;
+}
+switch(FEAT_TRAINS, SELF, sw_E656_articulated_part, extra_callback_info1) {
+    1 .. 1: return item_E656;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, sw_E655_articulated_part, extra_callback_info1) {
+    1 .. 1: return item_E655;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, sw_E656_length, position_in_consist  % 2) {
+       return 5;
+}
+
+
 
 item(FEAT_TRAINS, item_E424) {
     property {
@@ -44,6 +99,7 @@ item(FEAT_TRAINS, item_E424) {
         running_cost_factor:          90;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        62 mph;
+        loading_speed:                6;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
         track_type:                   ELRL;
@@ -168,5 +224,233 @@ item(FEAT_TRAINS, item_E626) {
     graphics {
         default:                      E626;
         sound_effect:                 sw_424_sound;
+    }
+}
+
+item(FEAT_TRAINS, item_E646) {
+    property {
+        name:                         string(STR_NAME_E646);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1958, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 80;
+        reliability_decay:            50;
+        non_refittable_cargo_classes: bitmask();
+        cost_factor:                  37;
+        running_cost_factor:          92;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        87 mph;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        power:                        4200 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0; 
+        weight:                       110 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.94 / 6; //164 kN
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_E646_graphics;
+	articulated_part:             sw_E646_articulated_part;
+        sound_effect:                 sw_424_sound;
+	length:                       sw_E646_length;
+	purchase:                     E646_p;
+    }
+}
+
+item(FEAT_TRAINS, item_E645) {
+    property {
+        name:                         string(STR_NAME_E645);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1958, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 80;
+        reliability_decay:            70;
+        non_refittable_cargo_classes: bitmask();
+        cost_factor:                  36;
+        running_cost_factor:          85;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        120 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        power:                        4200 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0; 
+        weight:                       112 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  1.10 / 6;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_E646_graphics;
+	articulated_part:             sw_E645_articulated_part;
+        sound_effect:                 sw_424_sound;
+	length:                       sw_E646_length;
+	purchase:                     E646_p;
+    }
+}
+
+item(FEAT_TRAINS, item_E624) {
+    property {
+        name:                         string(STR_NAME_E624);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1930, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 120;
+        reliability_decay:            90;
+	refittable_cargo_classes:     bitmask(CC_PASSENGERS,CC_MAIL);
+        non_refittable_cargo_classes: bitmask();
+        cost_factor:                  35;
+        running_cost_factor:          12;
+        loading_speed:                6;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        120 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        power:                        408 kW;
+	ai_special_flag:              AI_FLAG_PASSENGER;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               85; 
+        weight:                       53 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.5 / 6;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      E624;
+        sound_effect:                 sw_624_sound;
+    }
+}
+
+item(FEAT_TRAINS, item_E656) {
+    property {
+        name:                         string(STR_NAME_E656);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1976, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            30;
+        non_refittable_cargo_classes: bitmask();
+        cost_factor:                  46;
+        running_cost_factor:          99;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        95 mph;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        power:                        4800 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0; 
+        weight:                       120 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.97 / 6; //164 kN
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_E656_graphics;
+	articulated_part:             sw_E656_articulated_part;
+        sound_effect:                 sw_656_sound;
+	length:                       sw_E656_length;
+	purchase:                     E656_p;
+    }
+}
+
+item(FEAT_TRAINS, item_E656N) {
+    property {
+        name:                         string(STR_NAME_E656N);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1986, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            45;
+        non_refittable_cargo_classes: bitmask();
+        cost_factor:                  49;
+        running_cost_factor:          80;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        150 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        power:                        4800 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0; 
+        weight:                       120 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.97 / 6; //164 kN
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_E656_graphics;
+	articulated_part:             sw_E656_articulated_part;
+        sound_effect:                 sw_656_sound;
+	length:                       sw_E656_length;
+	purchase:                     E656_p;
+    }
+}
+
+item(FEAT_TRAINS, item_E655) {
+    property {
+        name:                         string(STR_NAME_E655);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2003, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 60;
+        reliability_decay:            50;
+        non_refittable_cargo_classes: bitmask();
+        cost_factor:                  40;
+        running_cost_factor:          99;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        120 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        power:                        4800 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0; 
+        weight:                       120 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  1.12 / 6; //164 kN
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_E656_graphics;
+	articulated_part:             sw_E655_articulated_part;
+        sound_effect:                 sw_656_sound;
+	length:                       sw_E656_length;
+	purchase:                     E656_p;
     }
 }

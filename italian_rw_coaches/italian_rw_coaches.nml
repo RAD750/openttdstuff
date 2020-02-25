@@ -23,16 +23,21 @@ template tmpl_vehicle_8_views(num, reversed) {
 spriteset (pr, "gfx/PR.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (mdvc, "gfx/MDVC.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (mdvc_pilota_passante, "gfx/MDVC.png") { tmpl_vehicle_8_views(1, 0) }
+spriteset (mdvc_pilota_mazinga, "gfx/MDVC.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (mdve, "gfx/MDVE.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (casaralta, "gfx/casaralta.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (casaralta_pilota, "gfx/casaralta.png") { tmpl_vehicle_8_views(1, 0) }
 spriteset (uicx, "gfx/UIC-X.png") { tmpl_vehicle_8_views(0, 0) }
 //spriteset (uicx_pilota, "gfx/UIC-X.png") { tmpl_vehicle_8_views(1, 0) }
 spriteset (uicx_baga, "gfx/UIC-X.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (nvrec, "gfx/UIC-X.png") { tmpl_vehicle_8_views(3, 0) }
 spriteset (uicz, "gfx/UIC-Z.png") { tmpl_vehicle_8_views(0, 0) }
 //spriteset (uicx_pilota, "gfx/UIC-X.png") { tmpl_vehicle_8_views(1, 0) }
 spriteset (uicz_baga, "gfx/UIC-Z.png") { tmpl_vehicle_8_views(2, 0) }
 spriteset (cessalto, "gfx/cessalto.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (cessalto_pilota, "gfx/cessalto.png") { tmpl_vehicle_8_views(1, 0) }
+spriteset (uicy, "gfx/UIC-Y.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (trenoazzurro, "gfx/TA.png") { tmpl_vehicle_8_views(0, 0) }
 
 //cargotable posta, beni
 cargotable {
@@ -48,7 +53,6 @@ cargotable {
 //    bitmask(CC_ARMOURED):string("Hello");
 //    string("hello 2");
 //}
-
 
 item(FEAT_TRAINS, item_PR) {
     property {
@@ -400,5 +404,162 @@ item(FEAT_TRAINS, item_cessalto_pilota) {
     }
     graphics {
         default:                         cessalto_pilota;
+    }
+}
+
+item(FEAT_TRAINS, item_uicy) {
+    property {
+        name:                         string(STR_UICY_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1961, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            35;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                10; 
+        cost_factor:                  19;
+        running_cost_factor:          12;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        160 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               64; 
+        weight:                       42 ton;
+        air_drag_coefficient:         0.02;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                         uicy;
+    }
+}
+item(FEAT_TRAINS, item_trenoazzurro) {
+    property {
+        name:                         string(STR_TRENOAZZURRO_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1946, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                10; 
+        cost_factor:                  16;
+        running_cost_factor:          11;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        140 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               54; 
+        weight:                       37 ton;
+        air_drag_coefficient:         0.02;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                         trenoazzurro;
+    }
+}
+item(FEAT_TRAINS, item_mdvc_pilota_mazinga) {
+    property {
+        name:                         string(STR_MDVC_PILOTA_MAZINGA_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1981, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            50;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                10; 
+        cost_factor:                  11;
+        running_cost_factor:          12;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        160 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               62; 
+        weight:                       39 ton;
+        air_drag_coefficient:         0.02;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                         mdvc_pilota_mazinga;
+    }
+}
+item(FEAT_TRAINS, item_mdve) {
+    property {
+        name:                         string(STR_MDVE_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1981, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            50;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                5; 
+        cost_factor:                  11;
+        running_cost_factor:          12;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        160 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               86; 
+        weight:                       39 ton;
+        air_drag_coefficient:         0.02;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                         mdve;
+    }
+}
+
+item(FEAT_TRAINS, item_nvrec) {
+    property {
+        name:                         string(STR_NVREC_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1965, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            50;
+        refittable_cargo_classes:     bitmask(CC_EXPRESS, CC_MAIL, CC_ARMOURED);
+        non_refittable_cargo_classes: bitmask(CC_PASSENGERS, CC_BULK, CC_PIECE_GOODS, CC_LIQUID);
+        loading_speed:                10; 
+        cost_factor:                  10;
+        running_cost_factor:          12;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        145 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_CARGO;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               30;
+        weight:                       55 ton;
+        air_drag_coefficient:         0.02;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                         nvrec;
     }
 }

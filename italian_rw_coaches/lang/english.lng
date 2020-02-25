@@ -1,7 +1,7 @@
 ##grflangid 0x00
 
 STR_GRF_NAME                 :{TITLE}
-STR_GRF_DESCRIPTION          :This package includes some Italian railway coaches.{}Included are:{}* Carrozza Piano Ribassato (PR){}* Carrozza Casaralta (ADP){}* Carrozze Medie Distanze (MDVE/MDVC){}* Carrozza UIC-X DTR{}* Carrozza UIC-Z DPLH{}* Carrozza Vivalto 2nd series (CDPTR)
+STR_GRF_DESCRIPTION          :This package includes some Italian railway coaches.{}Included are:{}* Carrozza Piano Ribassato (PR){}* Carrozza Casaralta (ADP){}* Carrozze Medie Distanze (MDVE/MDVC){}* Carrozza UIC-X DTR and luggage car{}* Carrozza UIC-Z DPLH and luggage car{}* Carrozza Vivalto 2nd series (CDPTR){}* Carrozza UIC-Y{}* Carrozza Treno Azzurro tipo 1946
 
 STR_PR_NAME                     :Carr. Piano Ribassato
 STR_PR_PILOTA464_NAME           :Pilota PR revamp
@@ -19,3 +19,6 @@ STR_UICZ_DPLH_NAME              :Carr. UIC-Z
 STR_UICZ_BAGA_NAME              :UIC-Z luggage car
 STR_CESSALTO_NAME               :Carr. Vivalto CDPTR
 STR_CESSALTO_PILOTA_NAME        :Pilota Vivalto
+STR_UICY_NAME                   :Carr. UIC-Y
+STR_TRENOAZZURRO_NAME           :Carr. Treno Azzurro (Type 1946)
+STR_NVREC_NAME                  :Generator car (nVREC)

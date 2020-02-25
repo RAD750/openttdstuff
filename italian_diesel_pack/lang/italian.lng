@@ -1,0 +1,6 @@
+##grflangid 0x27
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :Questo pacchetto contiene alcune locomotive diesel italiane.
+STR_NAME_D443                                                   :D.443
+STR_NAME_D445                                                   :D.445
+STR_NAME_D449                                                   :D.449

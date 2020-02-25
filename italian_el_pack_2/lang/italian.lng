@@ -6,3 +6,9 @@ STR_NAME_E424N                                                  :E 424 'Navetta'
 STR_NAME_E326                                                   :E 326
 STR_NAME_E626                                                   :E 626
 STR_NAME_E625                                                   :E 625
+STR_NAME_E646                                                   :E 646
+STR_NAME_E645                                                   :E 645
+STR_NAME_E624                                                   :E 624 'Cremonese'
+STR_NAME_E656                                                   :E 656 "Caimano"
+STR_NAME_E656N                                                  :E 656 "Caimano Navetta"
+STR_NAME_E655                                                   :E 655 "Caimano"
