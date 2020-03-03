@@ -12,6 +12,10 @@ STR_MDVE_NAME                   :Carr. MDVE
 STR_MDVC_NAME                   :Carr. MDVC
 STR_MDVC_PILOTA_PASSANTE_NAME   :Pilota MD passante
 STR_MDVC_PILOTA_MAZINGA_NAME    :Pilota MD Mazinga
+STR_MDVC_PRIMA                  :Carr. MDVC (1st class)
+STR_MDVC_DTR_NAME                   :Carr. MDVC (DTR)
+STR_MDVC_PILOTA_PASSANTE_DTR_NAME   :Pilota MD passante (DTR)
+STR_MDVC_PILOTA_MAZINGA_DTR_NAME    :Pilota MD Mazinga (DTR)
 STR_UICX_DTR_NAME               :Carr. UIC-X DTR
 STR_UICX_BAGA_NAME              :UIC-X luggage car
 STR_UICX_DTR_PILOTA_NAME        :Pilota UIC-X

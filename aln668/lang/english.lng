@@ -1,11 +1,16 @@
 ##grflangid 0x00
 STR_GRF_NAME                                                    :{TITLE} {VERSION}
-STR_GRF_DESCRIPTION                                             :A pack of ALn668 diesel railcar built by FIAT Ferroviaria (now Alstom). It contains the 1200, 1400, 1800 and 3100 series.
+STR_GRF_DESCRIPTION                                             :A pack of ALn668 diesel railcar built by FIAT Ferroviaria (now Alstom). It contains the 1200, 1400, 1800 and 3100 series, and the ALn776 of the FCU (in single and married-pair configuration)
 STR_NAME_ALN668_3100                                            :ALn668.3100
 STR_NAME_ALN668_1200                                            :ALn668.1200
 STR_NAME_ALN668_1400                                            :ALn668.1400
 STR_NAME_ALN668_1800                                            :ALn668.1800
+STR_NAME_ALN776_SINGOLA                                         :ALn776 (single unit)
+STR_NAME_ALN776_BINATA                                          :ALn776 (married pair)
 STR_ALN668_NO_ALTRI_VAGONI                                      :Cannot couple railcars to other rolling stock!
 STR_ALN668_NO_SERIE_MISTE                                       :Multiple units can be made only with same series railcars (e.g. 1200 together with another 1200 etc.)
 STR_ALN668_3100_TROPPO_LUNGA                                    :Maximum of 3 railcars in multiple unit configuration for the 3100 series!
 STR_ALN668_TROPPO_LUNGA                                         :Maximum of 2 railcars in multiple unit configuration!
+STR_ALN776_NO_SERIE_MISTE                                       :It is not allowed to couple single units with married pairs ALn776s.
+STR_ALN776_SINGOLA_TROPPO_LUNGA                                 :Maximum of 5 single unit ALn776s!
+STR_ALN776_BINATA_TROPPO_LUNGA                                  :Maximum of 3 married pair ALn776s!
