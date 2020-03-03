@@ -43,27 +43,32 @@ Table key:
 |E.633 'Tigre'|Kiiw|[E.632/633](https://it.wikipedia.org/wiki/Locomotiva_FS_E.632)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 3|
 |E.652 'Tigrone'|Kiiw|[E.652](https://it.wikipedia.org/wiki/Locomotiva_FS_E.652)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 3|
 |E.652 'Tigrone MIR'|Kiiw|rebuilt E.652 for freight|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 3|
+|E.444 'Tartaruga elettronica'|lego11|E.444.005 rebuilt with thyristor control|:x:| |
+|E.447 'Tartaruga della Direttissima'|lego11|E.444 rebuilt with longer gearing, could run at 230 km/h|:x:| |
 |E.444R 'Tartaruga'|Kiiw|[E.444R](https://it.wikipedia.org/wiki/Locomotiva_FS_E.444R)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
 |E.626|lego11|[E.626](https://it.wikipedia.org/wiki/Locomotiva_FS_E.626)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
 |E.326|lego11|[E.326](https://it.wikipedia.org/wiki/Locomotiva_FS_E.326)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
 |E.424|lego11|[E.424](https://it.wikipedia.org/wiki/Locomotiva_FS_E.424)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+|E.424 Navetta|lego11|[E.424](https://it.wikipedia.org/wiki/Locomotiva_FS_E.424)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
 |E.646|lego11|[E.646](https://it.wikipedia.org/wiki/Locomotiva_FS_E.646)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
-|E.656|lego11|[E.656](https://it.wikipedia.org/wiki/Locomotiva_FS_E.656)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+|E.656 'Caimano'|lego11|[E.656](https://it.wikipedia.org/wiki/Locomotiva_FS_E.656)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
 |E.656 Navetta|lego11|[E.656](https://it.wikipedia.org/wiki/Locomotiva_FS_E.656)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
-|E.655|lego11|[E.656](https://it.wikipedia.org/wiki/Locomotiva_FS_E.656)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+|E.655 'Caimano'|lego11|[E.656](https://it.wikipedia.org/wiki/Locomotiva_FS_E.656)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
 
 
 ### Multiple units and railcars
 #### Diesel
 |Name|Textures by|Real life info|Status|GRF Name|
 |---|---|---|---|---|
-|ALn668.1200|lego11|[ALn668.1200](https://it.wikipedia.org/wiki/Automotrice_FS_ALn_668.1200)|:x: on hold||
-|ALn668.1400|lego11|[ALn668.1200](https://it.wikipedia.org/wiki/Automotrice_FS_ALn_668.1400)|:x: on hold||
-|ALn668.1500|lego11|[ALn668.1200](https://it.wikipedia.org/wiki/Automotrice_FS_ALn_668.1500)|:x: on hold||
-|ALn668.3100|lego11|[ALn668.3100](https://it.wikipedia.org/wiki/Automotrice_FS_ALn_668.3100)|:heavy_check_mark: not released yet||
+|ALn668.1200|lego11|[ALn668.1200](https://it.wikipedia.org/wiki/Automotrice_FS_ALn_668.1200)|:heavy_check_mark: :sound:|ALn 668|
+|ALn668.1400|lego11|[ALn668.1200](https://it.wikipedia.org/wiki/Automotrice_FS_ALn_668.1400)|:heavy_check_mark: :sound:|ALn 668|
+|ALn668.1500|lego11|[ALn668.1200](https://it.wikipedia.org/wiki/Automotrice_FS_ALn_668.1200)|:heavy_check_mark: :sound:|ALn 668|
+|ALn668.3100|lego11|[ALn668.3100](https://it.wikipedia.org/wiki/Automotrice_FS_ALn_668.3100)|:heavy_check_mark: :sound:|ALn 668|
+|ALn776 Singola|lego11|[ALn776](https://it.wikipedia.org/wiki/Automotrice_FCU_ALn_776)|:heavy_check_mark: :sound:|ALn 668|
+|ALn776 Binata|lego11|[ALn776](https://it.wikipedia.org/wiki/Automotrice_FCU_ALn_776)|:heavy_check_mark: :sound:|ALn 668|
 |GTW 2/6 ATR115|lego11 and Kiiw|[ATR115](https://it.wikipedia.org/wiki/Autotreno_TN_ATR_115)|:heavy_check_mark: Sound missing|Stadler GTW (Trenord ATR115/125)|
 |GTW 4/12 ATR125|lego11 and Kiiw|[ATR125](https://it.wikipedia.org/wiki/Autotreno_TN_ATR_125)|:heavy_check_mark: Sound missing|Stadler GTW (Trenord ATR115/125)|
-|ALn776|lego11|[ALn776](https://it.wikipedia.org/wiki/Automotrice_FCU_ALn_776)|:x: texture missing||
+
 
 #### Electric
 |Name|Textures by|Real life info|Status|GRF Name|
@@ -88,10 +93,9 @@ Table key:
 #### Passenger
 |Name|Textures by|Real life info|Status|GRF Name|
 |---|---|---|---|---|
-
 |Carrozza Treno Azzurro (Tipo 1946)|Kiiw|[Tipo 1946](https://www.wikiwand.com/it/Carrozze_FS_tipo_1946)|:heavy_check_mark:|Italian Railway Coaches|
 |Piano Ribassato|Kiiw|[PR](https://it.wikipedia.org/wiki/Carrozza_vicinale_a_piano_ribassato)|:heavy_check_mark:|Italian Railway Coaches|
-|Pilota PR|||:fire:||
+|Pilota PR| | |:fire:| |
 |MDVC|Kiiw|[MDVC](https://it.wikipedia.org/wiki/Carrozze_FS_tipo_MDVC)|:heavy_check_mark:|Italian Railway Coaches|
 |Pilota MDVC piatta|Kiiw||:heavy_check_mark:|Italian Railway Coaches|
 |Pilota MDVC Mazinga|Kiiw||:heavy_check_mark:|Italian Railway Coaches|
@@ -104,7 +108,7 @@ Table key:
 |Vivalto (CDPTR)|lego11|[CDPTR](http://italy.hitachirail.com/carrozza-cdptr_421.html)|:heavy_check_mark:|Italian Railway Coaches|
 |Pilota Vivalto|Kiiw||:heavy_check_mark:|Italian Railway Coaches|
 
-#### Luggage cars
+#### Luggage cars and generator car
 Can be refitted to carry either mail, goods or valuables. In the future, the running cost when carrying valuables will increase as you'll need an escort.
 Both kinds of luggage cars carry exactly the same amount of cargo, the only difference being the top speed and the cost.
 
