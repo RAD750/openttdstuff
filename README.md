@@ -1,5 +1,5 @@
-# OpenTTD Stuff
-This repo contains (most of) my NewGRFs for OpenTTD. Currently there are two completed train GRFs and two WIP trains.
+# OpenTTD Stuff (mostly Italian stock)
+This repo contains (most of) my NewGRFs for OpenTTD.
 Some of the textures have been made by Gabriele (Kiiw) who I dearly thank for his work :)
 
 EB740 at Galliate station with suburban trains
@@ -21,6 +21,21 @@ Table key:
 |:x:|not yet started|
 |:fire:|not planned|
 |:sound:|has sound|
+
+### Packages
+
+See below for detailed info about the content
+
+|Name|Contains...|Status|
+|---|---|---|
+|Italian Electric Locomotives Pack 1|Contains the earliest generation of electric locomotives in Italy: battery, 650 V third rail, and 3600V 16,7 Hz three-phase.|:x:|
+|Italian Electric Locomotives Pack 2|Contains the second generation of electric locomotives in Italy: 3000V DC with rheostatic controls.|:heavy_check_mark:|
+|Italian Electric Locomotives Pack 3|Contains the third generation of electric locomotives in Italy: 3000V DC and 25 kV AC with DC thyristor controls.|:heavy_check_mark:|
+|Italian Electric Locomotives Pack 4|Contains the fourth generation of electric locomotives in Italy: 3000V DC and 25 kV AC with AC GTO/IGBT controls, and multivoltage locomotives.|:x:|
+|Italian Diesel Locomotives Pack|Contains diesel locomotives from Italy (all eras)|:heavy_check_mark: still in progress|
+|Italian Highspeed Pack|Contains high speed trainsets (>249 km/h)|:x:|
+|Italian Railway Coaches|Contains Italian passenger coaches (all eras)|:heavy_check_mark:|
+
 
 ### Locomotives
 #### Diesel
@@ -91,6 +106,9 @@ Table key:
 ### Rolling stock
 
 #### Passenger
+
+Currently it is not possible to make the driving coaches work (i.e. the locomotive is always leading)
+
 |Name|Textures by|Real life info|Status|GRF Name|
 |---|---|---|---|---|
 |Carrozza Treno Azzurro (Tipo 1946)|Kiiw|[Tipo 1946](https://www.wikiwand.com/it/Carrozze_FS_tipo_1946)|:heavy_check_mark:|Italian Railway Coaches|
