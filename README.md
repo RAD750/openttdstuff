@@ -28,21 +28,30 @@ Table key:
 |---|---|---|---|---|
 |NOHAB 'A'|The OpenGFX Project|[NOHAB](http://en.wikipedia.org/wiki/NOHAB)|:heavy_check_mark: :sound:|NOHAB|
 |NOHAB 'B'|The OpenGFX Project|[NOHAB](http://en.wikipedia.org/wiki/NOHAB)|:heavy_check_mark: :sound:|NOHAB|
-|D.449|Kiiw|[D.449](https://it.wikipedia.org/wiki/Locomotiva_FS_D.449)|:construction: texture done||
+|D.449|Kiiw|[D.449](https://it.wikipedia.org/wiki/Locomotiva_FS_D.449)|:heavy_check_mark: :sound:|Italian Diesel Locomotives Pack|
+|D.445|Kiiw|[D.445](https://it.wikipedia.org/wiki/Locomotiva_FS_D.445)|:heavy_check_mark: :sound:|Italian Diesel Locomotives Pack|
+|D.443|Kiiw|[D.443](https://it.wikipedia.org/wiki/Locomotiva_FS_D.443)|:heavy_check_mark: :sound:|Italian Diesel Locomotives Pack|
 
 #### Electric
 |Name|Textures by|Real life info|Status|GRF Name|
 |---|---|---|---|---|
 |E.464|Kiiw|[E.464](https://it.wikipedia.org/wiki/Locomotiva_FS_E.464)|:heavy_check_mark: :sound:|E464|
-|E.620 'Tigrotto'|Kiiw|[Tigrotto](https://it.wikipedia.org/wiki/Locomotiva_FNM_E.620)|:construction: texture WIP| |
-|E.491 'Senapina'|Kiiw|[E491/492](https://it.wikipedia.org/wiki/Locomotiva_FS_E.491)|:construction: texture done| |
-|E.492 'Senapina'|Kiiw|[E491/492](https://it.wikipedia.org/wiki/Locomotiva_FS_E.491)|:construction: texture done| |
-|E.632 'Tigre'|Kiiw|[E.632/633](https://it.wikipedia.org/wiki/Locomotiva_FS_E.632)|:construction: sound missing| |
-|E.633 'Tigre'|Kiiw|[E.632/633](https://it.wikipedia.org/wiki/Locomotiva_FS_E.632)|:construction: texture WIP| |
-|E.652 'Tigrone'|Kiiw|[E.652](https://it.wikipedia.org/wiki/Locomotiva_FS_E.652)|:construction: texture WIP| |
-|E.652 'Tigrone MIR'|Kiiw|rebuilt E.652 for freight|:construction: texture WIP||
-|E.444R 'Tartaruga'|Kiiw|[E.444R](https://it.wikipedia.org/wiki/Locomotiva_FS_E.444R)|:construction: texture done| |
-|E.646|lego11|[E.646](https://it.wikipedia.org/wiki/Locomotiva_FS_E.646)|:x: just an idea| |
+|E.620 'Tigrotto'|Kiiw|[Tigrotto](https://it.wikipedia.org/wiki/Locomotiva_FNM_E.620)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 3|
+|E.491 'Senapina'|Kiiw|[E491/492](https://it.wikipedia.org/wiki/Locomotiva_FS_E.491)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 3|
+|E.492 'Senapina'|Kiiw|[E491/492](https://it.wikipedia.org/wiki/Locomotiva_FS_E.491)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 3|
+|E.632 'Tigre'|Kiiw|[E.632/633](https://it.wikipedia.org/wiki/Locomotiva_FS_E.632)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 3|
+|E.633 'Tigre'|Kiiw|[E.632/633](https://it.wikipedia.org/wiki/Locomotiva_FS_E.632)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 3|
+|E.652 'Tigrone'|Kiiw|[E.652](https://it.wikipedia.org/wiki/Locomotiva_FS_E.652)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 3|
+|E.652 'Tigrone MIR'|Kiiw|rebuilt E.652 for freight|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 3|
+|E.444R 'Tartaruga'|Kiiw|[E.444R](https://it.wikipedia.org/wiki/Locomotiva_FS_E.444R)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+|E.626|lego11|[E.626](https://it.wikipedia.org/wiki/Locomotiva_FS_E.626)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+|E.326|lego11|[E.326](https://it.wikipedia.org/wiki/Locomotiva_FS_E.326)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+|E.424|lego11|[E.424](https://it.wikipedia.org/wiki/Locomotiva_FS_E.424)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+|E.646|lego11|[E.646](https://it.wikipedia.org/wiki/Locomotiva_FS_E.646)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+|E.656|lego11|[E.656](https://it.wikipedia.org/wiki/Locomotiva_FS_E.656)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+|E.656 Navetta|lego11|[E.656](https://it.wikipedia.org/wiki/Locomotiva_FS_E.656)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+|E.655|lego11|[E.656](https://it.wikipedia.org/wiki/Locomotiva_FS_E.656)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+
 
 ### Multiple units and railcars
 #### Diesel
@@ -59,6 +68,7 @@ Table key:
 #### Electric
 |Name|Textures by|Real life info|Status|GRF Name|
 |---|---|---|---|---|
+|E.624 "Cremonese"|kiiw|[E.624](https://www.wikiwand.com/it/Automotrice_FS_E.624)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
 |EB.740|lego11|[EB.740](https://it.wikipedia.org/wiki/https://it.wikipedia.org/wiki/Automotrice_FNM_E.740)|:heavy_check_mark: :sound:|Breda EB740|
 |ALe582|Kiiw|[Ale582](https://it.wikipedia.org/wiki/Automotrice_FS_ALe_582)|:heavy_check_mark: :sound:|ALe582-ALe642|
 |ALe642|Kiiw|[Ale642](https://it.wikipedia.org/wiki/Automotrice_FS_ALe_642)|:heavy_check_mark: :sound:|ALe582-ALe642|
@@ -68,8 +78,9 @@ Table key:
 |Name|Textures by|Real life info|Status|GRF Name|
 |---|---|---|---|---|
 |ALe601|lego11| |:construction:| |
+|ETR460|lego11| |:construction:| |
 |ETR500|lego11| |:construction:| |
-|ETR575 AGV|lego11| |:construction:| |
+|ETR575 AGV|lego11| |:heavy_check_mark: :sound:|Not released yet|
 
 
 ### Rolling stock
@@ -77,15 +88,18 @@ Table key:
 #### Passenger
 |Name|Textures by|Real life info|Status|GRF Name|
 |---|---|---|---|---|
+
+|Carrozza Treno Azzurro (Tipo 1946)|Kiiw|[Tipo 1946](https://www.wikiwand.com/it/Carrozze_FS_tipo_1946)|:heavy_check_mark:|Italian Railway Coaches|
 |Piano Ribassato|Kiiw|[PR](https://it.wikipedia.org/wiki/Carrozza_vicinale_a_piano_ribassato)|:heavy_check_mark:|Italian Railway Coaches|
 |Pilota PR|||:fire:||
 |MDVC|Kiiw|[MDVC](https://it.wikipedia.org/wiki/Carrozze_FS_tipo_MDVC)|:heavy_check_mark:|Italian Railway Coaches|
 |Pilota MDVC piatta|Kiiw||:heavy_check_mark:|Italian Railway Coaches|
-|Pilota MDVC Mazinga|||:fire:||
-|MDVE|Kiiw|[MDVE](https://it.wikipedia.org/wiki/Carrozze_FS_tipo_MDVE)|:x:||
+|Pilota MDVC Mazinga|Kiiw||:heavy_check_mark:|Italian Railway Coaches|
+|MDVE|Kiiw|[MDVE](https://it.wikipedia.org/wiki/Carrozze_FS_tipo_MDVE)|:heavy_check_mark:|Italian Railway Coaches|
 |Casaralta|Kiiw| |:heavy_check_mark:|Italian Railway Coaches|
 |Pilota Casaralta|Kiiw| |:heavy_check_mark:|Italian Railway Coaches|
 |UIC-X DTR|lego11|[UIC-X](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-X)|:heavy_check_mark:|Italian Railway Coaches|
+|UIC-Y|Kiiw|[UIC-Y](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-Y)|:heavy_check_mark:|Italian Railway Coaches|
 |UIC-Z DPLH|lego11|[UIC-Z1](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-Z1)|:heavy_check_mark:|Italian Railway Coaches|
 |Vivalto (CDPTR)|lego11|[CDPTR](http://italy.hitachirail.com/carrozza-cdptr_421.html)|:heavy_check_mark:|Italian Railway Coaches|
 |Pilota Vivalto|Kiiw||:heavy_check_mark:|Italian Railway Coaches|
@@ -94,10 +108,17 @@ Table key:
 Can be refitted to carry either mail, goods or valuables. In the future, the running cost when carrying valuables will increase as you'll need an escort.
 Both kinds of luggage cars carry exactly the same amount of cargo, the only difference being the top speed and the cost.
 
+The generator car enables you to realistically use electrically heated/air conditioned coaches (from the Italian Railway Coaches GRF, all coaches need electricity in real life for heating and lighting.) with locomotives that can't supply electric heating power, like the D.443, D.449 and the NOHAB 'A'.
+
+It should also have sound but for some reason I haven't been able to make it play continuously together with the locomotive.
+
+In the future, if I figure out a way to do it, your profit will take a significant dent if you run passenger trains without heating/air conditioning, as more passengers will likely travel without a valid ticket ;)
+
 |Name|Textures by|Real life info|Status|GRF Name|
 |---|---|---|---|---|
 |UIC-X luggage car|Kiiw|[UIC-X](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-X)|:heavy_check_mark:|Italian Railway Coaches|
 |UIC-Z luggage car|Kiiw|[UIC-Z1](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-Z1)|:heavy_check_mark:|Italian Railway Coaches|
+|nVREC generator car (Carro Riscaldo)|lego11|[nvDREC](http://www.ferrovie.it/portale/articoli/48)|:heavy_check_mark:|Italian Railway Coaches|
 
 ---
 **DISCLAIMER**: I am a geology student, not a programmer and neither a pixel artist :wink:. So please apologise in advance and please report any bug :thumbsup:
