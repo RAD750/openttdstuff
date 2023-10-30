@@ -26,16 +26,37 @@ spriteset (ETR575_MR, "gfx/ETR575.png") { tmpl_vehicle_8_views(2, 0) }
 spriteset (ETR575_RA, "gfx/ETR575.png") { tmpl_vehicle_8_views(3, 0) }
 spriteset (ETR575_RB, "gfx/ETR575.png") { tmpl_vehicle_8_views(4, 0) }
 
+spriteset (ETR1000_M, "gfx/ETR1000.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (ETR1000_MC, "gfx/ETR1000.png") { tmpl_vehicle_8_views(1, 0) }
+spriteset (ETR1000_MR, "gfx/ETR1000.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (ETR1000_RA, "gfx/ETR1000.png") { tmpl_vehicle_8_views(3, 0) }
+spriteset (ETR1000_RB, "gfx/ETR1000.png") { tmpl_vehicle_8_views(4, 0) }
+
 /*Suono partenza*/
 switch(FEAT_TRAINS, SELF, sw_ETR575_sound, getbits(extra_callback_info1, 0, 8)) {
     SOUND_EVENT_START: sound("sound/ETR575.wav");
 }
+
+/*Suono partenza*/
+switch(FEAT_TRAINS, SELF, sw_ETR1000_sound, getbits(extra_callback_info1, 0, 8)) {
+    SOUND_EVENT_START: sound("sound/ETR1000.wav");
+}
+
+
 
 //No agganciare altri vagoni
 switch(FEAT_TRAINS, SELF, no_altri_vagoni, vehicle_type_id) {
     item_ETR575: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_CANNOT_ATTACH_OTHER);
 }
+
+//No agganciare altri vagoni
+switch(FEAT_TRAINS, SELF, sw_ETR1000_no_altri_vagoni, vehicle_type_id) {
+    item_ETR1000: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_CANNOT_ATTACH_OTHER);
+}
+
+
 
 
 //ETR575
@@ -46,13 +67,18 @@ switch(FEAT_TRAINS, SELF, sw_ETR575_graphics, position_in_vehid_chain % 11) {
     10:     ETR575_MC;
     ETR575_MR;
 }
+
+
+
+
 switch(FEAT_TRAINS, SELF, sw_ETR575_articulated_part, extra_callback_info1) {
     1 .. 10: return item_ETR575;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ETR575_start_stop, num_vehs_in_consist) {
-    1 .. 11: return CB_RESULT_NO_TEXT;
+    11: return CB_RESULT_NO_TEXT;
+    22: return CB_RESULT_NO_TEXT;
     return string(STR_ETR575_CANNOT_START);
 }
 switch(FEAT_TRAINS, SELF, sw_etr575_length, position_in_consist  % 10) {
@@ -100,5 +126,73 @@ item(FEAT_TRAINS, item_ETR575) {
         start_stop:                   sw_ETR575_start_stop;
         can_attach_wagon:             no_altri_vagoni;
         length:                       sw_etr575_length;
+    }
+}
+
+//ETR1000
+switch(FEAT_TRAINS, SELF, sw_ETR1000_graphics, position_in_vehid_chain % 11) {
+    0:      ETR1000_M;
+    1:      ETR1000_RA;
+    9:      ETR1000_RB;
+    10:     ETR1000_MC;
+    ETR1000_MR;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_ETR1000_articulated_part, extra_callback_info1) {
+    1 .. 10: return item_ETR1000;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ETR1000_start_stop, num_vehs_in_consist) {
+    11: return CB_RESULT_NO_TEXT;
+    22: return CB_RESULT_NO_TEXT;
+    return string(STR_ETR575_CANNOT_START);
+}
+switch(FEAT_TRAINS, SELF, sw_etr1000_length, position_in_consist  % 10) {
+    0: return 8;
+    10: return 8;
+    return 6;
+}
+
+
+item(FEAT_TRAINS, item_ETR1000) {
+    property {
+        name:                         string(STR_NAME_ETR1000);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2012, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        cost_factor:                  210;
+        running_cost_factor:          190;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        400 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        9900 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               42; 
+        weight:                       454 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.6 / 4;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_ETR1000_graphics;
+        sound_effect:                 sw_ETR1000_sound;
+        articulated_part:             sw_ETR1000_articulated_part;
+        start_stop:                   sw_ETR1000_start_stop;
+        can_attach_wagon:             sw_ETR1000_no_altri_vagoni;
+        length:                       sw_etr1000_length;
     }
 }

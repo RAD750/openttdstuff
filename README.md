@@ -93,6 +93,7 @@ See below for detailed info about the content
 |ALe582|Kiiw|[Ale582](https://it.wikipedia.org/wiki/Automotrice_FS_ALe_582)|:heavy_check_mark: :sound:|ALe582-ALe642|
 |ALe642|Kiiw|[Ale642](https://it.wikipedia.org/wiki/Automotrice_FS_ALe_642)|:heavy_check_mark: :sound:|ALe582-ALe642|
 |ALe426-506 'TAF'|Kiiw|[TAF](https://it.wikipedia.org/wiki/Treno_alta_frequentazione)|:heavy_check_mark: :sound:|ALe426-506 TAF|
+|ETR 103-104 'Pop'|Kiiw|[Pop](https://it.wikipedia.org/wiki/Elettrotreno_FS_ETR.103-104)|:heavy_heck_mark: :sound:|ETR 103-104 'Pop'|
 
 #### High speed
 |Name|Textures by|Real life info|Status|GRF Name|

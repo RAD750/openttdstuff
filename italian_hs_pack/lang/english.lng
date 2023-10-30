@@ -2,11 +2,11 @@
 STR_GRF_NAME                                                    :{TITLE} {VERSION}
 STR_GRF_DESCRIPTION                                             :The {TITLE} is a collection of Italian highspeed trains.
 STR_CANNOT_ATTACH_OTHER                                         :Cannot couple other cars!
-STR_ETR575_CANNOT_START                                         :Multiple unit is not supported!
+STR_ETR575_CANNOT_START                                         :This multiple unit configuration not supported!
 STR_NAME_ALE601_ORI                                             :ALe601 (Original)
 STR_NAME_ALE601_AV                                              :ALe601 (Regeared)
 STR_NAME_ETR460                                                 :ETR460 'Pendolino'
 STR_NAME_ETR575                                                 :ETR575 '.italo'
 STR_NAME_ETR500                                                 :ETR500 'Frecciarossa'
-STR_NAME_ETR400                                                 :ETR400 'Frecciarossa 1000'
 STR_NAME_ETR700                                                 :ETR700 'Fyra'
+STR_NAME_ETR1000                                                :ETR1000 'Frecciarossa 1000'

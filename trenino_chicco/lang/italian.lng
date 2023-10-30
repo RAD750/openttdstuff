@@ -1,0 +1,7 @@
+##grflangid 0x27
+STR_GRF_NAME                                                    :ETR 103/{ETR104} {VERSION}
+STR_GRF_DESCRIPTION                                             :Gli ETR 103 e {ETR104} sono elettrotreni prodotti nel 2019 dalla Alstom di Savigliano (Torino), basati sulla piattaforma Coradia Stream e progettati per servizi regionali. La motorizzazione è composta da quattro motori asincroni trifase.
+STR_NAME_ETR103                                                 :{ETR103}
+STR_NAME_ETR104                                                 :{ETR104}
+STR_ETR_CANNOT_ATTACH_OTHER                                     :Non si possono agganciare altri vagoni!
+STR_ETR_CANNOT_START                                            :Non si possono agganciare ETR 103 ad ETR 104!

@@ -1,0 +1,167 @@
+grf {
+	grfid: "JCHO";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESCRIPTION);
+	version: 0;
+	min_compatible_version: 0;
+}
+railtypetable {
+    ELRL
+}
+template tmpl_vehicle_basic(x, y) {
+    [x , y,  8, 24,  -3, -12]
+    [x +  9, y, 22, 20, -14, -12]
+    [x + 32, y, 32, 16, -16, -12]
+    [x + 65, y, 22, 20,  -6, -12]
+}
+template tmpl_vehicle_8_views(num, reversed) {
+    tmpl_vehicle_basic(reversed ? 89 : 1, 1 + 32 * num)
+    tmpl_vehicle_basic(reversed ? 1 : 89, 1 + 32 * num)
+}
+
+/* Define the spritesets, these allow referring to these sprites later on */
+spriteset (M, "gfx/chicco.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (M2, "gfx/chicco.png") { tmpl_vehicle_8_views(1, 0) }
+spriteset (RP, "gfx/chicco.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (R, "gfx/chicco.png") { tmpl_vehicle_8_views(3, 0) }
+
+/*Suono partenza*/
+switch(FEAT_TRAINS, SELF, sw_etrpop_sound, getbits(extra_callback_info1, 0, 8)) {
+    SOUND_EVENT_START: sound("sound/chicco.wav");
+}
+
+
+/*Grafica*/
+//ETR103
+switch(FEAT_TRAINS, SELF, sw_etr103_graphics, position_in_consist % 3) {
+    0:      M;
+    2:      M2;
+    RP;
+}
+
+//ETR103
+switch(FEAT_TRAINS, SELF, sw_etr103_articulated_part, extra_callback_info1) {
+    1 .. 2: return item_etr103;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+//ETR104
+switch(FEAT_TRAINS, SELF, sw_etr104_graphics, position_in_consist % 4) {
+    0:      M;
+    1:      R;
+    3:      M2;
+    RP;
+}
+//ETR104
+switch(FEAT_TRAINS, SELF, sw_etr104_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_etr104;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+/*Verifica lunghezza treno*/
+switch(FEAT_TRAINS, SELF, sw_etr103_start_stop, num_vehs_in_consist) {
+    3: return CB_RESULT_NO_TEXT;
+    6: return CB_RESULT_NO_TEXT;
+    return string(STR_ETR_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_etr104_start_stop, num_vehs_in_consist) {
+    4: return CB_RESULT_NO_TEXT;
+    8: return CB_RESULT_NO_TEXT;
+    return string(STR_ETR_CANNOT_START);
+}
+
+
+/*Verifica non attaccare altri vagoni*/
+switch(FEAT_TRAINS, SELF, sw_etrpop_can_attach_wagon, vehicle_type_id) {
+    item_etr103: return CB_RESULT_ATTACH_ALLOW;
+    item_etr104: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_ETR_CANNOT_ATTACH_OTHER);
+}
+
+
+item(FEAT_TRAINS, item_etr103) {
+    property {
+        name:                         string(STR_NAME_ETR103);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2019, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            40;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                12; 
+        cost_factor:                  40;
+        running_cost_factor:          33;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        160 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        2000 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               80; 
+        weight:                       160 ton; //57+33+37 ton
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.18 / 4;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_etr103_graphics;
+        articulated_part:             sw_etr103_articulated_part;
+        sound_effect:                 sw_etrpop_sound;
+        can_attach_wagon:             sw_etrpop_can_attach_wagon;
+        start_stop:                   sw_etr103_start_stop;
+    }
+}
+
+
+item(FEAT_TRAINS, item_etr104) {
+    property {
+        name:                         string(STR_NAME_ETR104);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2019, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            40;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                12; 
+        cost_factor:                  40;
+        running_cost_factor:          33;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        160 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        2000 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               107; 
+        weight:                       190 ton; //57+33+37 ton
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.17 / 4;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_etr104_graphics;
+        articulated_part:             sw_etr104_articulated_part;
+        sound_effect:                 sw_etrpop_sound;
+        can_attach_wagon:             sw_etrpop_can_attach_wagon;
+        start_stop:                   sw_etr104_start_stop;
+    }
+}
+
+

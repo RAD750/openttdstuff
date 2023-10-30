@@ -1,0 +1,7 @@
+##grflangid 0x00
+STR_GRF_NAME                                                    :ETR 103/{ETR104} {VERSION}
+STR_GRF_DESCRIPTION                                             :The ETR 103 and {ETR104} are EMUs produced in 2019 by Alstom in Savigliano (Torino), based on the Coradia Stream family and intended for regional services. They are powered by four AC asynchronous motors.
+STR_NAME_ETR103                                                 :{ETR103}
+STR_NAME_ETR104                                                 :{ETR104}
+STR_ETR_CANNOT_ATTACH_OTHER                                     :It is not possible to couple other wagons!
+STR_ETR_CANNOT_START                                            :Cannot attach ETR 104 and ETR 103 together!
