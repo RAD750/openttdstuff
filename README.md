@@ -99,9 +99,12 @@ See below for detailed info about the content
 |Name|Textures by|Real life info|Status|GRF Name|
 |---|---|---|---|---|
 |ALe601|lego11| |:construction:| |
-|ETR460|lego11| |:construction:| |
-|ETR500|lego11| |:construction:| |
-|ETR575 AGV|lego11| |:heavy_check_mark: :sound:|Not released yet|
+|ETR460|lego11| |:heavy_check_mark: :sound:| |
+|ETR500|lego11| |:heavy_check_mark: :sound:| |
+|ETR500 Mercitalia|lego11| |:heavy_check_mark: :sound:| |
+|ETR1000|lego11| |:heavy_check_mark: :sound:| |
+|ETR610|lego11| |:heavy_check_mark: :sound:| |
+|ETR575 AGV|lego11| |:heavy_check_mark: :sound:| |
 
 
 ### Rolling stock

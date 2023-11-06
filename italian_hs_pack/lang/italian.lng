@@ -8,5 +8,6 @@ STR_NAME_ALE601_AV                                              :ALe601 (Rapport
 STR_NAME_ETR460                                                 :ETR460 'Pendolino'
 STR_NAME_ETR575                                                 :ETR575 '.italo'
 STR_NAME_ETR500                                                 :ETR500 'Frecciarossa'
-STR_NAME_ETR1000                                                 :ETR1000 'Frecciarossa 1000'
+STR_NAME_ETR1000                                                :ETR1000 'Frecciarossa 1000'
 STR_NAME_ETR700                                                 :ETR700 'Fyra'
+STR_NAME_ETR500_M                                               :ETR500 M 'Mercitalia Fast'

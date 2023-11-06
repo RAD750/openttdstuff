@@ -1,0 +1,10 @@
+##grflangid 0x27
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :L' {TITLE} contiene la quarta generazione di locomotive italiane, quelle con motori a corrente alternata con inverter e multisistema.
+STR_NAME_E402a                                                  :E 402a
+STR_NAME_E402b                                                  :E 402b
+STR_NAME_E404                                                   :E 404
+STR_NAME_E412                                                   :E 412
+STR_NAME_E483                                                   :E 483 "TRAXX 2"
+STR_NAME_E494                                                   :E 494 "TRAXX 3"
+STR_NAME_E191                                                   :E 191 "Vectron"
