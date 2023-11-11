@@ -109,3 +109,46 @@ item(FEAT_TRAINS, item_E494) {
         sound_effect:                 sw_E494_sound;
     }
 }
+
+//E191
+spriteset (E191, "gfx/e191.png") { tmpl_vehicle_8_views(0, 0) }
+
+/*Suono partenza*/
+switch(FEAT_TRAINS, SELF, sw_E191_sound, getbits(extra_callback_info1, 0, 8)) {
+    SOUND_EVENT_START: sound("sound/e494.wav");
+}
+
+item(FEAT_TRAINS, item_E191) {
+    property {
+        name:                         string(STR_NAME_E191);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2018, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            5;
+        non_refittable_cargo_classes: bitmask();
+        cost_factor:                  58;
+        running_cost_factor:          81;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        160 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        power:                        5200 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0; 
+        weight:                       86 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  1.11 / 3; //300kN
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      E191;
+        sound_effect:                 sw_E191_sound;
+    }
+}
