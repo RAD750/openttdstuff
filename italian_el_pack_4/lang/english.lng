@@ -3,7 +3,7 @@ STR_GRF_NAME                                                    :{TITLE} {VERSIO
 STR_GRF_DESCRIPTION                                             :The {TITLE} represents the fourth generation of Italian electric railway locomotives: multisystem locomotives and with AC inverter drives.
 STR_NAME_E402a                                                  :E 402a
 STR_NAME_E402b                                                  :E 402b
-STR_NAME_E404                                                   :E 404
+STR_NAME_E405                                                   :E 405
 STR_NAME_E412                                                   :E 412
 STR_NAME_E483                                                   :E 483 "TRAXX 2"
 STR_NAME_E494                                                   :E 494 "TRAXX 3"
