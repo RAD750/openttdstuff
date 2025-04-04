@@ -1,6 +1,10 @@
 ##grflangid 0x00
-STR_GRF_NAME                                                    :{TITLE} {VERSION}
-STR_GRF_DESCRIPTION                                             :The {TITLE} is a double-deck EMU intended for commuter service.
+STR_GRF_NAME                                                    :ALe426/506 'TAF' and ALe710/EB.710 'TSR' {VERSION}
+STR_GRF_DESCRIPTION                                             :The ALe426/506 'TAF' and ALe710/EB.710 'TSR' are double-deck EMU intended for commuter service. The first examples of 'TAF' were introduced in 1998, and the 'TSR' series are more refined units with distributed power.
 STR_NAME_TAF                                                    :ALe426/506 'TAF'
+STR_NAME_TSR_R3                                                 :ALe710/EB.710 'TSR R3'
+STR_NAME_TSR_R4                                                 :ALe710/EB.710 'TSR R4'
+STR_NAME_TSR_R5                                                 :ALe710/EB.710 'TSR R5'
+STR_NAME_TSR_R6                                                 :ALe710/EB.710 'TSR R6'
 STR_TAF_CANNOT_ATTACH_OTHER                                     :It is not possible to couple other wagons!
 STR_TAF_CANNOT_START                                            :Maximum 2 units in multiple configuration!

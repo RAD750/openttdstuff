@@ -1,6 +1,10 @@
 ##grflangid 0x27
-STR_GRF_NAME                                                    :{TITLE} {VERSION}
-STR_GRF_DESCRIPTION                                             :L' {TITLE} è un'elettrotreno a due piani per servizio suburbano.
+STR_GRF_NAME                                                    :ALe426/506 'TAF' e ALe710/EB.710 'TSR' {VERSION}
+STR_GRF_DESCRIPTION                                             :Le {TITLE} sono elettrotreni a due piani per servizio suburbano. I 'TAF' sono stati introdotti nel 1998, mentre i 'TSR' rappresentano una versione più raffinata prodotta dal 2006 con motorizzazione ripartita.
 STR_NAME_TAF                                                    :ALe426/506 'TAF'
-STR_TAF_CANNOT_ATTACH_OTHER                                     :Impossibile agganciare altri vagoni!
-STR_TAF_CANNOT_START                                            :Massimo di due TAF in unità multipla!
+STR_NAME_TSR_R3                                                 :ALe710/EB.710 'TSR R3'
+STR_NAME_TSR_R4                                                 :ALe710/EB.710 'TSR R4'
+STR_NAME_TSR_R5                                                 :ALe710/EB.710 'TSR R5'
+STR_NAME_TSR_R6                                                 :ALe710/EB.710 'TSR R6'
+STR_TAF_CANNOT_ATTACH_OTHER                                     :Impossibile agganciare altri vagoni (Le doppie miste TAF/TSR o TSR Rx/Ry non sono supportate)!
+STR_TAF_CANNOT_START                                            :Massimo di due TAF/TSR in unità multipla!

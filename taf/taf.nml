@@ -29,6 +29,11 @@ switch(FEAT_TRAINS, SELF, sw_taf_sound, getbits(extra_callback_info1, 0, 8)) {
     SOUND_EVENT_START: sound("sound/taf.wav");
 }
 
+/*Suono partenza TSR*/
+switch(FEAT_TRAINS, SELF, sw_tsr_sound, getbits(extra_callback_info1, 0, 8)) {
+    SOUND_EVENT_START: sound("sound/tsr.wav");
+}
+
 
 /*Grafica*/
 switch(FEAT_TRAINS, SELF, sw_taf_graphics, position_in_consist % 4) {
@@ -36,8 +41,56 @@ switch(FEAT_TRAINS, SELF, sw_taf_graphics, position_in_consist % 4) {
     3:      ALE_R;
     LE;
 }
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r3_graphics, position_in_consist % 3) {
+    0:      ALE;
+    2:      ALE_R;
+    LE;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r4_graphics, position_in_consist % 4) {
+    0:      ALE;
+    3:      ALE_R;
+    LE;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r5_graphics, position_in_consist % 5) {
+    0:      ALE;
+    4:      ALE_R;
+    LE;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r6_graphics, position_in_consist % 6) {
+    0:      ALE;
+    5:      ALE_R;
+    LE;
+}
+
+
 switch(FEAT_TRAINS, SELF, sw_taf_articulated_part, extra_callback_info1) {
     1 .. 3: return item_taf;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r3_articulated_part, extra_callback_info1) {
+    1 .. 2: return item_tsr_r3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r4_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_tsr_r4;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r5_articulated_part, extra_callback_info1) {
+    1 .. 4: return item_tsr_r5;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r6_articulated_part, extra_callback_info1) {
+    1 .. 5: return item_tsr_r6;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
@@ -47,12 +100,53 @@ switch(FEAT_TRAINS, SELF, sw_taf_start_stop, num_vehs_in_consist) {
     return string(STR_TAF_CANNOT_START);
 }
 
+switch(FEAT_TRAINS, SELF, sw_tsr_r3_start_stop, num_vehs_in_consist) {
+    1 .. 6: return CB_RESULT_NO_TEXT;
+    return string(STR_TAF_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r4_start_stop, num_vehs_in_consist) {
+    1 .. 8: return CB_RESULT_NO_TEXT;
+    return string(STR_TAF_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r5_start_stop, num_vehs_in_consist) {
+    1 .. 10: return CB_RESULT_NO_TEXT;
+    return string(STR_TAF_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r6_start_stop, num_vehs_in_consist) {
+    1 .. 12: return CB_RESULT_NO_TEXT;
+    return string(STR_TAF_CANNOT_START);
+}
+
 
 /*Verifica non attaccare altri vagoni*/
 switch(FEAT_TRAINS, SELF, sw_taf_can_attach_wagon, vehicle_type_id) {
     item_taf: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_TAF_CANNOT_ATTACH_OTHER);
 }
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r3_can_attach_wagon, vehicle_type_id) {
+    item_tsr_r3: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_TAF_CANNOT_ATTACH_OTHER);
+}
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r4_can_attach_wagon, vehicle_type_id) {
+    item_tsr_r4: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_TAF_CANNOT_ATTACH_OTHER);
+}
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r5_can_attach_wagon, vehicle_type_id) {
+    item_tsr_r5: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_TAF_CANNOT_ATTACH_OTHER);
+}
+
+switch(FEAT_TRAINS, SELF, sw_tsr_r6_can_attach_wagon, vehicle_type_id) {
+    item_tsr_r6: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_TAF_CANNOT_ATTACH_OTHER);
+}
+
 
 item(FEAT_TRAINS, item_taf) {
     property {
@@ -64,7 +158,7 @@ item(FEAT_TRAINS, item_taf) {
         reliability_decay:            20;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
-        loading_speed:                16;
+        loading_speed:                70;
         cost_factor:                  76;
         running_cost_factor:          70;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
@@ -92,5 +186,169 @@ item(FEAT_TRAINS, item_taf) {
         sound_effect:                 sw_taf_sound;
         can_attach_wagon:             sw_taf_can_attach_wagon;
         start_stop:                   sw_taf_start_stop;
+    }
+}
+
+item(FEAT_TRAINS, item_tsr_r3) {
+    property {
+        name:                         string(STR_NAME_TSR_R3);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2007, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            10;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                90;
+        cost_factor:                  82;
+        running_cost_factor:          49;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        140 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        2040 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               104; 
+        weight:                       169 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.4 / 4;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_tsr_r3_graphics;
+        articulated_part:             sw_tsr_r3_articulated_part;
+        sound_effect:                 sw_tsr_sound;
+        can_attach_wagon:             sw_tsr_r3_can_attach_wagon;
+        start_stop:                   sw_tsr_r3_start_stop;
+    }
+}
+
+item(FEAT_TRAINS, item_tsr_r4) {
+    property {
+        name:                         string(STR_NAME_TSR_R4);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2007, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            10;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                90;
+        cost_factor:                  85;
+        running_cost_factor:          65;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        140 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        2720kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               104; 
+        weight:                       222 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.4 / 4;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_tsr_r4_graphics;
+        articulated_part:             sw_tsr_r4_articulated_part;
+        sound_effect:                 sw_tsr_sound;
+        can_attach_wagon:             sw_tsr_r4_can_attach_wagon;
+        start_stop:                   sw_tsr_r4_start_stop;
+    }
+}
+
+item(FEAT_TRAINS, item_tsr_r5) {
+    property {
+        name:                         string(STR_NAME_TSR_R5);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2007, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            10;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                90;
+        cost_factor:                  82;
+        running_cost_factor:          82;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        140 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        3400kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               112; 
+        weight:                       275 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.4 / 4;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_tsr_r5_graphics;
+        articulated_part:             sw_tsr_r5_articulated_part;
+        sound_effect:                 sw_tsr_sound;
+        can_attach_wagon:             sw_tsr_r5_can_attach_wagon;
+        start_stop:                   sw_tsr_r5_start_stop;
+    }
+}
+
+item(FEAT_TRAINS, item_tsr_r6) {
+    property {
+        name:                         string(STR_NAME_TSR_R6);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2007, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            10;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                90;
+        cost_factor:                  82;
+        running_cost_factor:          98;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        140 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        4080 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               113; 
+        weight:                       328 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.4 / 4;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_tsr_r6_graphics;
+        articulated_part:             sw_tsr_r6_articulated_part;
+        sound_effect:                 sw_tsr_sound;
+        can_attach_wagon:             sw_tsr_r6_can_attach_wagon;
+        start_stop:                   sw_tsr_r6_start_stop;
     }
 }

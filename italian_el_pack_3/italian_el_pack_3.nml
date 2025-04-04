@@ -128,7 +128,7 @@ item(FEAT_TRAINS, item_E620) {
         reliability_decay:            20;
         non_refittable_cargo_classes: bitmask();
         cost_factor:                  15;
-        running_cost_factor:          75;
+        running_cost_factor:          65;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        130 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
@@ -163,7 +163,7 @@ item(FEAT_TRAINS, item_E633) {
         reliability_decay:            20;
         non_refittable_cargo_classes: bitmask();
         cost_factor:                  35;
-        running_cost_factor:          95;
+        running_cost_factor:          85;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        130 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
@@ -198,7 +198,7 @@ item(FEAT_TRAINS, item_E632) {
         reliability_decay:            40;
         non_refittable_cargo_classes: bitmask();
         cost_factor:                  40;
-        running_cost_factor:          95;
+        running_cost_factor:          85;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        160 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
@@ -233,7 +233,7 @@ item(FEAT_TRAINS, item_E652) {
         reliability_decay:            60;
         non_refittable_cargo_classes: bitmask();
         cost_factor:                  55;
-        running_cost_factor:          82;
+        running_cost_factor:          80;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        160 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
@@ -268,7 +268,7 @@ item(FEAT_TRAINS, item_E652MIR) {
         reliability_decay:            60;
         non_refittable_cargo_classes: bitmask();
         cost_factor:                  55;
-        running_cost_factor:          78;
+        running_cost_factor:          80;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        120 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);

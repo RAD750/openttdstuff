@@ -115,7 +115,7 @@ spriteset (E191, "gfx/e191.png") { tmpl_vehicle_8_views(0, 0) }
 
 /*Suono partenza*/
 switch(FEAT_TRAINS, SELF, sw_E191_sound, getbits(extra_callback_info1, 0, 8)) {
-    SOUND_EVENT_START: sound("sound/e494.wav");
+    SOUND_EVENT_START: sound("sound/Vectron.wav");
 }
 
 item(FEAT_TRAINS, item_E191) {
@@ -158,7 +158,7 @@ spriteset (E405, "gfx/e405.png") { tmpl_vehicle_8_views(0, 0) }
 
 /*Suono partenza*/
 switch(FEAT_TRAINS, SELF, sw_E405_sound, getbits(extra_callback_info1, 0, 8)) {
-    SOUND_EVENT_START: sound("sound/e494.wav");
+    SOUND_EVENT_START: sound("sound/e412.wav");
 }
 
 item(FEAT_TRAINS, item_E405) {
@@ -201,7 +201,7 @@ spriteset (E412, "gfx/e412.png") { tmpl_vehicle_8_views(0, 0) }
 
 /*Suono partenza*/
 switch(FEAT_TRAINS, SELF, sw_E412_sound, getbits(extra_callback_info1, 0, 8)) {
-    SOUND_EVENT_START: sound("sound/e494.wav");
+    SOUND_EVENT_START: sound("sound/e412.wav");
 }
 
 item(FEAT_TRAINS, item_E412) {
