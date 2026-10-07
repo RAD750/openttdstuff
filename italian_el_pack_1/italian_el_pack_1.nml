@@ -1,0 +1,197 @@
+grf {
+	grfid: "JC\26\23";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESCRIPTION);
+	version: 0;
+	min_compatible_version: 0;
+}
+railtypetable {
+    TRIF,
+    TRDL,
+    RAIL,
+    ELRL
+}
+template tmpl_vehicle_basic(x, y) {
+    [x,      y,  8, 24,  -3, -12]
+    [x +  9, y, 22, 20, -14, -12]
+    [x + 32, y, 32, 16, -16, -12]
+    [x + 65, y, 22, 20,  -6, -12]
+}
+template tmpl_vehicle_8_views(num, reversed) {
+    tmpl_vehicle_basic(reversed ? 89 : 1, 1 + 32 * num)
+    tmpl_vehicle_basic(reversed ? 1 : 89, 1 + 32 * num)
+}
+
+template tmpl_vehicle_single(num, xsize, ysize, xoff, yoff) {
+    [1, 1 + 32 * num, xsize, ysize, xoff, yoff]
+}
+
+/* Define the spritesets, these allow referring to these sprites later on */
+spriteset (E421, "gfx/421.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (E220, "gfx/220.png") { tmpl_vehicle_8_views(0, 0) }
+
+/*Suono partenza*/
+switch(FEAT_TRAINS, SELF, sw_424_sound, getbits(extra_callback_info1, 0, 8)) {
+    SOUND_EVENT_START: sound("sound/424.wav");
+}
+
+item(FEAT_TRAINS, item_E421) {
+    property {
+        name:                         string(STR_NAME_E421);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1911, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 9;
+        reliability_decay:            50;
+        cost_factor:                  39;
+        running_cost_factor:          37;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        30 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   RAIL ;
+        power:                        140 kW;
+        running_cost_base:            RUNNING_COST_STEAM;
+        dual_headed:                  0;
+        cargo_capacity:               0; 
+        weight:                       64 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.2 / 3;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+        length: 6;
+    }
+    graphics {
+        default:                      E421;
+        sound_effect:                 sw_424_sound;
+    }
+}
+
+item(FEAT_TRAINS, item_E220) {
+    property {
+        name:                         string(STR_NAME_E220);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1901, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 70;
+        reliability_decay:            50;
+        cost_factor:                  39;
+        running_cost_factor:          32;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        60 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   TRDL;
+        power:                        220 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0; 
+        weight:                       64 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.2 / 3;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+        length: 4;
+    }
+    graphics {
+        default:                      E220;
+        sound_effect:                 sw_424_sound;
+    }
+}
+
+//railtype
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "TRDL";
+
+		name:						string(STR_3RDRAIL_NAME);
+		toolbar_caption:			string(STR_3RDRAIL_TOOLBAR);
+		menu_text:					string(STR_3RDRAIL_MENU);
+		build_window_caption:		string(STR_3RDRAIL_BUILD_MENU);
+		autoreplace_text:			string(STR_3RDRAIL_AUTOREPLACE);
+		new_engine_text:			string(STR_3RDRAIL_NEW_ENGINE);
+		introduction_date:  		date(1900,1,1);
+        compatible_railtype_list:   ["TRDL","RAIL"];          
+		powered_railtype_list:      ["TRDL"];                 
+        railtype_flags:             bitmask(RAILTYPE_FLAG_CATENARY);
+        curve_speed_multiplier:     1;         
+        construction_cost:          15;        
+		maintenance_cost: 			15;
+        speed_limit:                140 km/h;
+        acceleration_model:         ACC_MODEL_RAIL;                   
+    }
+    graphics {
+        catenary_wire:   third_rail;
+        catenary_pylons: third_rail_ins;
+    }
+}
+
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "RAIL";
+        compatible_railtype_list:   ["TRDL","RAIL","ELRL"];          
+	powered_railtype_list:      ["TRDL","ELRL"];                 
+    }
+}
+
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "ELRL";
+        compatible_railtype_list:   ["RAIL","ELRL"];          
+	powered_railtype_list:      ["ELRL"];                 
+    }
+}
+
+
+//3rd rail
+spriteset(third_rail,"gfx/3rdrail.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //left_x, upper_y, width, height, offset_x, offset_y
+	[      1,       1,    32,     22,      -18, 	  -8]
+	[     49,       1,    32,     22,       -1, 	  -8]
+	[     97,       1,    32,      7,       -1, 	  -8]
+	[    145,       1,     3,     22,        0, 	  -9]
+	[    161,       1,    32,     30,      -18,  	  -8]
+	[    209,       1,    32,     15,       -1,  	   1]
+	[    257,       1,    32,     15, 	   -18,  	   0]
+	[    305,       1,    32,     30,       -1, 	  -9]
+	[    353,       1,    32,     19,      -18, 	  -5]
+	[    401,       1,    32,     19,       -1, 	  -5]
+	[    449,       1,    32,      7,       -1,  	  -8]
+	[    497,       1,     3,     19,        0,  	  -6]
+	[    513,       1,    32,     27, 	   -18,  	  -5]
+	[    561,       1,    32,     12,       -1, 	   3]
+	[    609,       1,    32,     12,      -18, 	   3]
+	[    657,       1,    32,     27,       -1, 	  -6]
+	[      1,       49,   32,     22,      -18, 	  -8]
+	[     49,       49,   32,     22,       -1, 	  -8]
+	[     97,       49,   32,      7,       -1, 	  -8]
+	[    145,       49,    3,     22,        0, 	  -9]
+	[    161,       49,   32,     30,      -18,  	  -8]
+	[    209,       49,   32,     15,       -1,  	   0]
+	[    257,       49,   32,     15, 	   -18,  	   0]
+	[    305,       49,   32,     30,       -1, 	  -9]
+	[    353,       49,   16,     11,      -18, 	   3]
+	[    385,       49,   16,     14, 	    -1,  	  -8]
+	[    417,       49,   16,     14,      -13, 	  -8]
+	[    449,       49,   16,     11,       15, 	   4]		
+}
+
+spriteset(third_rail_ins,"gfx/3rdrailIns.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //left_x, upper_y, width, height, offset_x, offset_y
+	[      1,       1,     14,     22,       -11, 	 -22]
+	[     17,       1,     14,     24,        -1, 	 -23]
+	[     33,       1,     14,     22,        -2, 	 -22]
+	[     49,       1,     14,     24,       -9, 	 -23]
+	[     65,       1,     2,     22,        0,  	 -21]
+	[     81,       1,     2,     28,        0,  	 -23]
+	[     97,       1,     14,     22, 	     -3,  	 -23]
+	[    113,       1,     14,     22,       -9, 	 -23]
+}
