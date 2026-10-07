@@ -1,0 +1,4 @@
+##grflangid 0x00
+STR_GRF_NAME                                                    :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION                                             :{TITLE} is package of buses that were or are in use in the city of Genova.
+STR_NAME_MYVEHICLE                                              :{TITLE}

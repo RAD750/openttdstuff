@@ -1,2 +1,2 @@
-VERSION    :1.6a
+VERSION    :1.6b
 TITLE      :Italian Railway Coaches
