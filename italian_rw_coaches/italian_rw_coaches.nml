@@ -298,7 +298,7 @@ item(FEAT_TRAINS, item_uicz_dplh) {
         cost_factor:                  22;
         running_cost_factor:          16;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
-        speed:                        199 km/h; //200 con arrotondamento
+        speed:                        200 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
         track_type:                   RAIL;
@@ -326,11 +326,11 @@ item(FEAT_TRAINS, item_uicz_baga) {
         reliability_decay:            50;
         refittable_cargo_classes:     bitmask(CC_EXPRESS, CC_MAIL, CC_ARMOURED);
         non_refittable_cargo_classes: bitmask(CC_PASSENGERS, CC_BULK, CC_PIECE_GOODS, CC_LIQUID);
-        loading_speed:                20; 
+        loading_speed:                30; 
         cost_factor:                  20;
         running_cost_factor:          12;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
-        speed:                        199 km/h; //200 con arrotond
+        speed:                        200 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
         track_type:                   RAIL;
@@ -358,7 +358,7 @@ item(FEAT_TRAINS, item_cessalto) {
         reliability_decay:            10;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
-        loading_speed:                40; 
+        loading_speed:                45; 
         cost_factor:                  21;
         running_cost_factor:          13;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
