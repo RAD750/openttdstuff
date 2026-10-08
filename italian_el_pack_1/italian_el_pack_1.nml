@@ -257,6 +257,7 @@ item(FEAT_RAILTYPES) {
         underlay:   third_rail;
         track_overlay: third_rail_overlay;
         level_crossings: third_rail_pl;
+        catenary_pylons: trif_pylons; 
     }
 }
 
