@@ -11,3 +11,15 @@ STR_3RDRAIL_MENU                                                :Third rail trac
 STR_3RDRAIL_BUILD_MENU                                          :New Third Rail Vehicles
 STR_3RDRAIL_AUTOREPLACE                                         :Autoreplace third rail tracks
 STR_3RDRAIL_NEW_ENGINE                                          :New third rail rolling stock
+STR_3RDRAIL_DC_NAME                                             :Third rail track (650V) + DC catenary (3000V)
+STR_3RDRAIL_DC_TOOLBAR                                          :Third rail track (650V) + DC catenary (3000V)
+STR_3RDRAIL_DC_MENU                                             :Third rail track (650V) + DC catenary (3000V)
+STR_3RDRAIL_DC_BUILD_MENU                                       :New Third Rail and DC Vehicles
+STR_3RDRAIL_DC_AUTOREPLACE                                      :Autoreplace third rail and DC tracks
+STR_3RDRAIL_DC_NEW_ENGINE                                       :New third rail and DC rolling stock 
+STR_3RDRAIL_TRIF_NAME                                             :Third rail track (650V) + Three phase catenary
+STR_3RDRAIL_TRIF_TOOLBAR                                          :Third rail track (650V) + Three phase catenary
+STR_3RDRAIL_TRIF_MENU                                             :Third rail track (650V) + Three phase catenary
+STR_3RDRAIL_TRIF_BUILD_MENU                                       :New Third Rail and Three Phase Vehicles
+STR_3RDRAIL_TRIF_AUTOREPLACE                                      :Autoreplace third rail and Three Phase tracks
+STR_3RDRAIL_TRIF_NEW_ENGINE                                       :New third rail and Three Phase rolling stock 

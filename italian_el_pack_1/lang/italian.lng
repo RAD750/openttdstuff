@@ -5,9 +5,21 @@ STR_NAME_E220                                                   :E 220
 STR_NAME_E321                                                   :E 321
 STR_NAME_E421                                                   :E 421
 STR_NAME_E420                                                   :E 420
-STR_3RDRAIL_NAME                                                :Binari con terza rotaia
-STR_3RDRAIL_TOOLBAR                                             :Binari con terza rotaia
-STR_3RDRAIL_MENU                                                :Binari con terza rotaia
+STR_3RDRAIL_NAME                                                :Binari con terza rotaia (650V)
+STR_3RDRAIL_TOOLBAR                                             :Binari con terza rotaia (650V)
+STR_3RDRAIL_MENU                                                :Binari con terza rotaia (650V)
 STR_3RDRAIL_BUILD_MENU                                          :Nuovi rotabili alimentati a terza rotaia
 STR_3RDRAIL_AUTOREPLACE                                         :Autoreplace binari con terza rotaia
 STR_3RDRAIL_NEW_ENGINE                                          :Nuovo rotabile alimentato a terza rotaia
+STR_3RDRAIL_DC_NAME                                             :Binari con terza rotaia (650V) e catenaria (3000V)
+STR_3RDRAIL_DC_TOOLBAR                                          :Binari con terza rotaia (650V) e catenaria (3000V)
+STR_3RDRAIL_DC_MENU                                             :Binari con terza rotaia (650V) e catenaria (3000V)
+STR_3RDRAIL_DC_BUILD_MENU                                       :Nuovi rotabili alimentati a terza rotaia e corrente continua
+STR_3RDRAIL_DC_AUTOREPLACE                                      :Autoreplace binari con terza rotaia e corrente continua
+STR_3RDRAIL_DC_NEW_ENGINE                                       :Nuovo rotabile alimentato a terza rotaia o corrente continua
+STR_3RDRAIL_TRIF_NAME                                             :Binari con terza rotaia (650V) e trifase
+STR_3RDRAIL_TRIF_TOOLBAR                                          :Binari con terza rotaia (650V) e trifase
+STR_3RDRAIL_TRIF_MENU                                             :Binari con terza rotaia (650V) e trifase
+STR_3RDRAIL_TRIF_BUILD_MENU                                       :Nuovi rotabili alimentati a terza rotaia o trifase
+STR_3RDRAIL_TRIF_AUTOREPLACE                                      :Autoreplace binari con terza rotaia e trifase
+STR_3RDRAIL_TRIF_NEW_ENGINE                                       :Nuovo rotabile alimentato a terza rotaia o trifase

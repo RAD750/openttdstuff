@@ -217,16 +217,76 @@ item(FEAT_RAILTYPES) {
 		autoreplace_text:			string(STR_3RDRAIL_AUTOREPLACE);
 		new_engine_text:			string(STR_3RDRAIL_NEW_ENGINE);
 		introduction_date:  		date(1900,1,1);
-        compatible_railtype_list:   ["TRDL","RAIL"];          
-		powered_railtype_list:      ["TRDL"];                 
+        compatible_railtype_list:   ["TRDD","TRDL", "TRDT","RAIL"];          
+		powered_railtype_list:      ["TRDD","TRDL", "TRDT"];                 
         curve_speed_multiplier:     1;         
-        construction_cost:          15;        
-		maintenance_cost: 			15;
+        construction_cost:          11;        
+		maintenance_cost: 			11;
         speed_limit:                140 km/h;
         acceleration_model:         ACC_MODEL_RAIL;                   
     }
     graphics {
         underlay:   third_rail;
+        track_overlay: third_rail_overlay;
+        level_crossings: third_rail_pl;
+    }
+}
+
+//third rail + 3000V DC
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "TRDD";
+
+		name:						string(STR_3RDRAIL_DC_NAME);
+		toolbar_caption:			string(STR_3RDRAIL_DC_TOOLBAR);
+		menu_text:					string(STR_3RDRAIL_DC_MENU);
+		build_window_caption:		string(STR_3RDRAIL_DC_BUILD_MENU);
+		autoreplace_text:			string(STR_3RDRAIL_DC_AUTOREPLACE);
+		new_engine_text:			string(STR_3RDRAIL_DC_NEW_ENGINE);
+		introduction_date:  		date(1900,1,1);
+        compatible_railtype_list:   ["ELRL","TRDL","RAIL"];          
+		powered_railtype_list:      ["ELRL","TRDL"];                 
+        curve_speed_multiplier:     1;         
+        construction_cost:          20;        
+		maintenance_cost: 			20;
+        speed_limit:                140 km/h;
+        acceleration_model:         ACC_MODEL_RAIL;   
+        railtype_flags:             bitmask(RAILTYPE_FLAG_CATENARY);                
+    }
+    graphics {
+        underlay:   third_rail;
+        track_overlay: third_rail_overlay;
+        level_crossings: third_rail_pl;
+    }
+}
+
+//third rail + 3600V three phase
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "TRDT";
+
+		name:						string(STR_3RDRAIL_TRIF_NAME);
+		toolbar_caption:			string(STR_3RDRAIL_TRIF_TOOLBAR);
+		menu_text:					string(STR_3RDRAIL_TRIF_MENU);
+		build_window_caption:		string(STR_3RDRAIL_TRIF_BUILD_MENU);
+		autoreplace_text:			string(STR_3RDRAIL_TRIF_AUTOREPLACE);
+		new_engine_text:			string(STR_3RDRAIL_TRIF_NEW_ENGINE);
+		introduction_date:  		date(1900,1,1);
+        compatible_railtype_list:   ["TRIF","TRDL","RAIL"];          
+		powered_railtype_list:      ["TRIF","TRDL"];                 
+        curve_speed_multiplier:     1;         
+        construction_cost:          21;        
+		maintenance_cost: 			21;
+        speed_limit:                140 km/h;
+        acceleration_model:         ACC_MODEL_RAIL;   
+        railtype_flags:             bitmask(RAILTYPE_FLAG_CATENARY);                
+    }
+    graphics {
+        underlay:   third_rail;
+        track_overlay: third_rail_overlay;
+        level_crossings: third_rail_pl;
+        catenary_wire:   trif_wire;
+        catenary_pylons: trif_pylons; 
     }
 }
 
@@ -234,15 +294,39 @@ item(FEAT_RAILTYPES) {
     property {
         label:                      "RAIL";
         compatible_railtype_list:   ["TRDL","RAIL","ELRL"];          
-	powered_railtype_list:      ["TRDL","ELRL"];                 
+    	powered_railtype_list:      ["TRDL","ELRL"];                 
     }
 }
 
 item(FEAT_RAILTYPES) {
     property {
         label:                      "ELRL";
-        compatible_railtype_list:   ["RAIL","ELRL"];          
-	powered_railtype_list:      ["ELRL"];                 
+        compatible_railtype_list:   ["TRDD", "RAIL","ELRL"];          
+	    powered_railtype_list:      ["TRDD", "ELRL"];                 
+    }
+}
+
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "TRDD";
+        compatible_railtype_list:   ["TRDL","RAIL","ELRL"];          
+	    powered_railtype_list:      ["TRDL","ELRL"];                 
+    }
+}
+
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "TRDT";
+        compatible_railtype_list:   ["TRDL","RAIL","TRIF"];          
+	    powered_railtype_list:      ["TRDL","TRIF"];                 
+    }
+}
+
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "TRIF";
+        compatible_railtype_list:   ["TRDT"];          
+	    powered_railtype_list:      ["TRDT"];                 
     }
 }
 
@@ -256,10 +340,10 @@ spriteset(third_rail,"gfx/3rdrail.png") {
     [ 322,   40,  64,  31, -31,   0]
 	[ 402,   40,  64,  31, -31,   0]
     [ 482,   40,  64,  31, -31,   0]
-    [ 562,   40,  64,  31, -31,   0]
+    [ 562,   40,  64,  39, -31,   -8]
     [ 642,   40,  64,  31, -31,   0]
     [ 722,   40,  64,  31, -31,   0]
-    [   2,   88,  64,  31, -31,   0]
+    [   2,   88,  64,  39, -31,  -8]
     [  82,   88,  64,  31, -31,   0]
     [ 162,   88,  64,  31, -31,   0]
     [ 242,   88,  64,  39, -31,  -8]
@@ -269,11 +353,79 @@ spriteset(third_rail,"gfx/3rdrail.png") {
     [ 562,   88,  64,  31, -31,  -8]
     [ 642,   88,  64,  23, -31,   0]
     [ 722,   88,  64,  31, -31,  -8]
-    [   2,  152,  64,  39, -31,  -8]
-    [  82,  152,  64,  39, -31,  -8]
-    [ 162,  152,  64,  23, -31,   0]
-    [ 242,  152,  64,  23, -31,   0]
-    [ 322,  152,  64,  39, -31,  -8]
-    [ 402,  152,  64,  31, -31,   0]
-    [ 482,  152,  64,  31, -31,   0]
 }
+
+spriteset(third_rail_overlay,"gfx/3rdrail.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [  66,    8,  40,  21, -19,   5]
+    [ 114,    8,  40,  21, -19,   5]
+    [ 162,    8,  40,   7, -19,   4]
+    [ 210,    8,  40,   7, -19,  20]
+    [ 258,    8,  12,  19,  11,   6]
+    [ 290,    8,  12,  19, -21,   6]
+}
+
+spriteset(third_rail_pl, "gfx/3rdrail.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [  6,    135,  44,  23, -21,   4] //binari
+    [  56,   135,  44,  23, -21,   4] //binari 90°
+    [  1,   183,  5,  12, -25,   7] //nord
+    [  151,   183,  5,  12, 0,   -9] //est
+    [  1,   183,  5,  12, 9,   -3] //sud
+    [  8,   183,  5,  12, -25,   7] //ovest
+    
+    [  8,   183,  5,  12, -25,   7] //nord luci
+    [  8,   183,  5,  12, 0,   -9] //est luci
+    [  8,   183,  5,  12, 9,   -3] //sud luci
+    [  151,   183,  5,  12, -1,   -9] //ovest luci
+}
+
+
+//3 phase catenary
+//Catenary poles
+spriteset(trif_pylons,"gfx/poles-trifase.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //left_x, upper_y, width, height, offset_x, offset_y
+	[      1,       1,     14,     22,       -11, 	 -22]
+	[     17,       1,     14,     24,        -1, 	 -23]
+	[     33,       1,     14,     22,        -2, 	 -22]
+	[     49,       1,     14,     24,       -9, 	 -23]
+	[     65,       1,     2,     22,        0,  	 -21]
+	[     81,       1,     2,     28,        0,  	 -23]
+	[     97,       1,     14,     22, 	     -3,  	 -23]
+	[    113,       1,     14,     22,       -9, 	 -23]
+}
+//Wires
+spriteset(trif_wire,"gfx/wires-trifase.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //left_x, upper_y, width, height, offset_x, offset_y
+	[      1,       1,    32,     22,      -29, 	  -8]
+	[     49,       1,    32,     22,       -1, 	  -8]
+	[     97,       1,    32,      7,       -1, 	  -8]
+	[    145,       1,     3,     22,        0, 	  -9]
+	[    161,       1,    32,     30,      -29,  	  -8]
+	[    209,       1,    32,     15,       -1,  	   1]
+	[    257,       1,    32,     15, 	   -29,  	   0]
+	[    305,       1,    32,     30,       -1, 	  -9]
+	[    353,       1,    32,     19,      -29, 	  -5]
+	[    401,       1,    32,     19,       -1, 	  -5]
+	[    449,       1,    32,      7,       -1,  	  -8]
+	[    497,       1,     3,     19,        0,  	  -6]
+	[    513,       1,    32,     27, 	   -29,  	  -5]
+	[    561,       1,    32,     12,       -1, 	   3]
+	[    609,       1,    32,     12,      -29, 	   3]
+	[    657,       1,    32,     27,       -1, 	  -6]
+	[      1,       49,   32,     22,      -29, 	  -8]
+	[     49,       49,   32,     22,       -1, 	  -8]
+	[     97,       49,   32,      7,       -1, 	  -8]
+	[    145,       49,    3,     22,        0, 	  -9]
+	[    161,       49,   32,     30,      -29,  	  -8]
+	[    209,       49,   32,     15,       -1,  	   0]
+	[    257,       49,   32,     15, 	   -29,  	   0]
+	[    305,       49,   32,     30,       -1, 	  -9]
+	[    353,       49,   16,     11,      -29, 	   3]
+	[    385,       49,   16,     14, 	    -1,  	  -8]
+	[    417,       49,   16,     14,      -13, 	  -8]
+	[    449,       49,   16,     11,       15, 	   4]		
+}
+
