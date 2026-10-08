@@ -432,6 +432,27 @@ item(FEAT_RAILTYPES) {
     }
 }
 
+//railtype 25kV AC
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "EL25";
+		name:						string(STR_EL25_NAME);
+		toolbar_caption:			string(STR_EL25_TOOLBAR);
+		menu_text:					string(STR_EL25_MENU);
+		build_window_caption:		string(STR_EL25_BUILD_MENU);
+		autoreplace_text:			string(STR_EL25_AUTOREPLACE);
+		new_engine_text:			string(STR_EL25_NEW_ENGINE);
+		introduction_date:  		date(1970,1,1);                
+        curve_speed_multiplier:     1;         
+        construction_cost:          11;        
+		maintenance_cost: 			11;
+        acceleration_model:         ACC_MODEL_RAIL;                   
+    }
+    graphics {
+        catenary_pylons:dc_pylons;
+    }
+}
+
 //Catenary poles
 spriteset(dc_pylons,"gfx/poles-dc.png") {
     //left_x, upper_y, width, height, offset_x, offset_y

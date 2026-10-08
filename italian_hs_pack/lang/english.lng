@@ -18,3 +18,10 @@ STR_ELRL_MENU                                                :Electrified Track 
 STR_ELRL_BUILD_MENU                                          :New 3000V DC Vehicles
 STR_ELRL_AUTOREPLACE                                         :Autoreplace 3000V DC tracks
 STR_ELRL_NEW_ENGINE                                          :New 3000V DC rolling stock
+
+STR_EL25_NAME                                                :Electrified Track (25kV AC)
+STR_EL25_TOOLBAR                                             :Electrified Track (25kV AC)
+STR_EL25_MENU                                                :Electrified Track (25kV AC)
+STR_EL25_BUILD_MENU                                          :New 25kV AC Vehicles
+STR_EL25_AUTOREPLACE                                         :Autoreplace 25kV AC tracks
+STR_EL25_NEW_ENGINE                                          :New 25kV AC rolling stock
