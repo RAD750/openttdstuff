@@ -205,7 +205,7 @@ item(FEAT_TRAINS, item_E321) {
 }
 
 
-//railtype
+//railtype third rail
 item(FEAT_RAILTYPES) {
     property {
         label:                      "TRDL";

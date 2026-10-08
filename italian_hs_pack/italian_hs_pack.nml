@@ -409,3 +409,39 @@ item(FEAT_TRAINS, item_ETR460) {
         //length:                       sw_etr500_length;
     }
 }
+
+//railtype 3kV DC
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "ELRL";
+		name:						string(STR_ELRL_NAME);
+		toolbar_caption:			string(STR_ELRL_TOOLBAR);
+		menu_text:					string(STR_ELRL_MENU);
+		build_window_caption:		string(STR_ELRL_BUILD_MENU);
+		autoreplace_text:			string(STR_ELRL_AUTOREPLACE);
+		new_engine_text:			string(STR_ELRL_NEW_ENGINE);
+		introduction_date:  		date(1920,1,1);                
+        curve_speed_multiplier:     1;         
+        construction_cost:          11;        
+		maintenance_cost: 			11;
+        speed_limit:                250 km/h;
+        acceleration_model:         ACC_MODEL_RAIL;                   
+    }
+    graphics {
+        catenary_pylons:dc_pylons;
+    }
+}
+
+//Catenary poles
+spriteset(dc_pylons,"gfx/poles-dc.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //left_x, upper_y, width, height, offset_x, offset_y
+	[      1,       1,     14,     22,       -11, 	 -22]
+	[     17,       1,     14,     24,        -1, 	 -23]
+	[     33,       1,     14,     22,        -2, 	 -22]
+	[     49,       1,     14,     24,       -9, 	 -23]
+	[     65,       1,     2,     22,        0,  	 -21]
+	[     81,       1,     2,     28,        0,  	 -23]
+	[     97,       1,     14,     22, 	     -3,  	 -23]
+	[    113,       1,     14,     22,       -9, 	 -23]
+}

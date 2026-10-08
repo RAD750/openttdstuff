@@ -11,3 +11,10 @@ STR_NAME_ETR500                                                 :ETR500 'Freccia
 STR_NAME_ETR700                                                 :ETR700 'Fyra'
 STR_NAME_ETR1000                                                :ETR1000 'Frecciarossa 1000'
 STR_NAME_ETR500_M                                               :ETR500 M 'Mercitalia Fast'
+
+STR_ELRL_NAME                                                :Electrified Track (3000V DC)
+STR_ELRL_TOOLBAR                                             :Electrified Track (3000V DC)
+STR_ELRL_MENU                                                :Electrified Track (3000V DC)
+STR_ELRL_BUILD_MENU                                          :New 3000V DC Vehicles
+STR_ELRL_AUTOREPLACE                                         :Autoreplace 3000V DC tracks
+STR_ELRL_NEW_ENGINE                                          :New 3000V DC rolling stock
