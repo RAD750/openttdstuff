@@ -26,15 +26,44 @@ template tmpl_vehicle_single(num, xsize, ysize, xoff, yoff) {
     [1, 1 + 32 * num, xsize, ysize, xoff, yoff]
 }
 
+//2cc general template
+template template_2cc_engines_general(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -12]
+    [x+9  , y, 22, 20, -14, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 20,  -6, -12]
+    [x+88 , y,  8, 24,  -3, -12]
+    [x+97 , y, 22, 20, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 20,  -6, -12]
+}
+
+
 /* Define the spritesets, these allow referring to these sprites later on */
 spriteset (E421, "gfx/421.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (E220, "gfx/220.png") { tmpl_vehicle_8_views(0, 0) }
+
+spriteset(E321_1, "gfx/321.png") {
+	template_2cc_engines_general(1, 1) 
+}
+spriteset(E321_2, "gfx/321.png") {
+	template_2cc_engines_general(1, 32) 
+}
+
+//animazioni
+switch(FEAT_TRAINS, SELF, switch_E321_animation, motion_counter % 2){
+	0: E321_1;
+	E321_2;
+}
+
 
 /*Suono partenza*/
 switch(FEAT_TRAINS, SELF, sw_424_sound, getbits(extra_callback_info1, 0, 8)) {
     SOUND_EVENT_START: sound("sound/424.wav");
 }
 
+//ACCUMULATORI
 item(FEAT_TRAINS, item_E421) {
     property {
         name:                         string(STR_NAME_E421);
@@ -70,6 +99,8 @@ item(FEAT_TRAINS, item_E421) {
     }
 }
 
+
+//TERZA ROTAIA
 item(FEAT_TRAINS, item_E220) {
     property {
         name:                         string(STR_NAME_E220);
@@ -132,13 +163,47 @@ item(FEAT_TRAINS, item_E420) {
         visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon:       0 ton;
         bitmask_vehicle_info:         0;
-        length: 4;
     }
     graphics {
-        default:                      E220;
+        default:                      E421;  //le apparenze estetiche non giustificano un modello differente
         sound_effect:                 sw_424_sound;
     }
 }
+
+item(FEAT_TRAINS, item_E321) {
+    property {
+        name:                         string(STR_NAME_E321);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1901, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 70;
+        reliability_decay:            50;
+        cost_factor:                  41;
+        running_cost_factor:          34;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        100 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   TRDL;
+        power:                        1450 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0; 
+        weight:                       69 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.15 / 3;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      switch_E321_animation;
+        sound_effect:                 sw_424_sound;
+    }
+}
+
 
 //railtype
 item(FEAT_RAILTYPES) {

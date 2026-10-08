@@ -2,10 +2,12 @@
 STR_GRF_NAME                                                    :{TITLE} {VERSION}
 STR_GRF_DESCRIPTION                                             :The {TITLE} represents the first generation of Italian electric railway locomotives, those powered by 650V DC third rail, battery power, or 3.6 kV AC 16Hz three phase.
 STR_NAME_E220                                                   :E 220
+STR_NAME_E321                                                   :E 321
 STR_NAME_E421                                                   :E 421
+STR_NAME_E420                                                   :E 420
 STR_3RDRAIL_NAME                                                :Third rail track (650V)
 STR_3RDRAIL_TOOLBAR                                             :Third rail track (650V)
 STR_3RDRAIL_MENU                                                :Third rail track (650V)
-STR_3RDRAIL_BUILD_MENU                                          :Binari con terza rotaia costruisci
-STR_3RDRAIL_AUTOREPLACE                                         :Binari con terza rotaia AUTOREPLACE
-STR_3RDRAIL_NEW_ENGINE                                          :Binari con terza rotaia DEPOSITO
+STR_3RDRAIL_BUILD_MENU                                          :New Third Rail Vehicles
+STR_3RDRAIL_AUTOREPLACE                                         :Autoreplace third rail tracks
+STR_3RDRAIL_NEW_ENGINE                                          :New third rail rolling stock
