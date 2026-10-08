@@ -6,7 +6,8 @@ grf {
 	min_compatible_version: 0;
 }
 railtypetable {
-    ELRL
+    ELRL,
+    EL25
 }
 template tmpl_vehicle_basic(x, y) {
     [x,      y,  8, 24,  -3, -12]
