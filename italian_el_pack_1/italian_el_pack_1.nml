@@ -8,6 +8,8 @@ grf {
 railtypetable {
     TRIF,
     TRDL,
+    TRDT,
+    TRDD,
     RAIL,
     ELRL
 }
@@ -217,7 +219,7 @@ item(FEAT_RAILTYPES) {
 		autoreplace_text:			string(STR_3RDRAIL_AUTOREPLACE);
 		new_engine_text:			string(STR_3RDRAIL_NEW_ENGINE);
 		introduction_date:  		date(1900,1,1);
-        compatible_railtype_list:   ["TRDD","TRDL", "TRDT","RAIL"];          
+        compatible_railtype_list:   ["TRDD","TRDL","RAIL","TRDT"];          
 		powered_railtype_list:      ["TRDD","TRDL", "TRDT"];                 
         curve_speed_multiplier:     1;         
         construction_cost:          11;        
@@ -257,7 +259,8 @@ item(FEAT_RAILTYPES) {
         underlay:   third_rail;
         track_overlay: third_rail_overlay;
         level_crossings: third_rail_pl;
-        catenary_pylons: trif_pylons; 
+        catenary_wire:   dc_wire;
+        catenary_pylons: dc_pylons; 
     }
 }
 
@@ -294,7 +297,7 @@ item(FEAT_RAILTYPES) {
 item(FEAT_RAILTYPES) {
     property {
         label:                      "RAIL";
-        compatible_railtype_list:   ["TRDL","RAIL","ELRL"];          
+        compatible_railtype_list:   ["RAIL","ELRL","TRDL","TRDD","TRDT"];
     	powered_railtype_list:      ["TRDL","ELRL"];                 
     }
 }
@@ -326,7 +329,7 @@ item(FEAT_RAILTYPES) {
 item(FEAT_RAILTYPES) {
     property {
         label:                      "TRIF";
-        compatible_railtype_list:   ["TRDT"];          
+        compatible_railtype_list:   ["TRDT", "RAIL"];          
 	    powered_railtype_list:      ["TRDT"];                 
     }
 }
@@ -430,3 +433,50 @@ spriteset(trif_wire,"gfx/wires-trifase.png") {
 	[    449,       49,   16,     11,       15, 	   4]		
 }
 
+//3000V DC catenary
+//Catenary poles
+spriteset(dc_pylons,"gfx/poles-dc.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //left_x, upper_y, width, height, offset_x, offset_y
+	[      1,       1,     14,     22,       -11, 	 -22]
+	[     17,       1,     14,     24,        -1, 	 -23]
+	[     33,       1,     14,     22,        -2, 	 -22]
+	[     49,       1,     14,     24,       -9, 	 -23]
+	[     65,       1,     2,     22,        0,  	 -21]
+	[     81,       1,     2,     28,        0,  	 -23]
+	[     97,       1,     14,     22, 	     -3,  	 -23]
+	[    113,       1,     14,     22,       -9, 	 -23]
+}
+//Wires
+spriteset(dc_wire,"gfx/wires-dc.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //left_x, upper_y, width, height, offset_x, offset_y
+	[      1,       1,    32,     22,      -29, 	  -8]
+	[     49,       1,    32,     22,       -1, 	  -8]
+	[     97,       1,    32,      7,       -1, 	  -8]
+	[    145,       1,     3,     22,        0, 	  -9]
+	[    161,       1,    32,     30,      -29,  	  -8]
+	[    209,       1,    32,     15,       -1,  	   1]
+	[    257,       1,    32,     15, 	   -29,  	   0]
+	[    305,       1,    32,     30,       -1, 	  -9]
+	[    353,       1,    32,     19,      -29, 	  -5]
+	[    401,       1,    32,     19,       -1, 	  -5]
+	[    449,       1,    32,      7,       -1,  	  -8]
+	[    497,       1,     3,     19,        0,  	  -6]
+	[    513,       1,    32,     27, 	   -29,  	  -5]
+	[    561,       1,    32,     12,       -1, 	   3]
+	[    609,       1,    32,     12,      -29, 	   3]
+	[    657,       1,    32,     27,       -1, 	  -6]
+	[      1,       49,   32,     22,      -29, 	  -8]
+	[     49,       49,   32,     22,       -1, 	  -8]
+	[     97,       49,   32,      7,       -1, 	  -8]
+	[    145,       49,    3,     22,        0, 	  -9]
+	[    161,       49,   32,     30,      -29,  	  -8]
+	[    209,       49,   32,     15,       -1,  	   0]
+	[    257,       49,   32,     15, 	   -29,  	   0]
+	[    305,       49,   32,     30,       -1, 	  -9]
+	[    353,       49,   16,     11,      -29, 	   3]
+	[    385,       49,   16,     14, 	    -1,  	  -8]
+	[    417,       49,   16,     14,      -13, 	  -8]
+	[    449,       49,   16,     11,       15, 	   4]		
+}

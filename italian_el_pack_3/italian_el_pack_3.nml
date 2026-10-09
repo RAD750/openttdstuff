@@ -64,7 +64,7 @@ item(FEAT_TRAINS, item_E492) {
         speed:                        160 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
-        track_type:                   ELRL;
+        track_type:                   EL25;
         power:                        3348 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
         dual_headed:                  0;
@@ -99,7 +99,7 @@ item(FEAT_TRAINS, item_E491) {
         speed:                        140 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
-        track_type:                   ELRL;
+        track_type:                   EL25;
         power:                        3348 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
         dual_headed:                  0;

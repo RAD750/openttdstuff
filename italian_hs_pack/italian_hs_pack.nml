@@ -6,6 +6,7 @@ grf {
 	min_compatible_version: 0;
 }
 railtypetable {
+    RAIL,
     ELRL,
     EL25
 }
@@ -130,7 +131,7 @@ item(FEAT_TRAINS, item_ETR575) {
         speed:                        299.1 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
-        track_type:                   ELRL;
+        track_type:                   [EL25, ELRL];
         ai_special_flag:              AI_FLAG_PASSENGER;
         power:                        7600 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
@@ -199,7 +200,7 @@ item(FEAT_TRAINS, item_ETR1000) {
         speed:                        400 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
-        track_type:                   ELRL;
+        track_type:                   [EL25, ELRL];
         ai_special_flag:              AI_FLAG_PASSENGER;
         power:                        9900 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
@@ -261,7 +262,7 @@ item(FEAT_TRAINS, item_ETR500) {
         speed:                        360 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
-        track_type:                   ELRL;
+        track_type:                   [EL25, ELRL];
         ai_special_flag:              AI_FLAG_PASSENGER;
         power:                        8800 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
@@ -322,7 +323,7 @@ item(FEAT_TRAINS, item_ETR500_M) {
         speed:                        300 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_2CC);
         refit_cost:                   0;
-        track_type:                   ELRL;
+        track_type:                   [EL25, ELRL];
         ai_special_flag:              AI_FLAG_CARGO;
         power:                        8800 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
@@ -423,8 +424,8 @@ item(FEAT_RAILTYPES) {
 		new_engine_text:			string(STR_ELRL_NEW_ENGINE);
 		introduction_date:  		date(1920,1,1);                
         curve_speed_multiplier:     1;         
-        construction_cost:          11;        
-		maintenance_cost: 			11;
+        construction_cost:          31;        
+		maintenance_cost: 			25;
         speed_limit:                250 km/h;
         acceleration_model:         ACC_MODEL_RAIL;                   
     }
@@ -445,12 +446,22 @@ item(FEAT_RAILTYPES) {
 		new_engine_text:			string(STR_EL25_NEW_ENGINE);
 		introduction_date:  		date(1970,1,1);                
         curve_speed_multiplier:     1;         
-        construction_cost:          11;        
-		maintenance_cost: 			11;
-        acceleration_model:         ACC_MODEL_RAIL;                   
+        construction_cost:          71;        
+		maintenance_cost: 			31;
+        acceleration_model:         ACC_MODEL_RAIL;    
+        compatible_railtype_list:   ["RAIL","EL25"];          
+	    powered_railtype_list:      ["EL25"];                    
     }
     graphics {
         catenary_pylons:dc_pylons;
+    }
+}
+
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "RAIL";
+        compatible_railtype_list:   ["RAIL","EL25"];          
+	    powered_railtype_list:      ["EL25"];                 
     }
 }
 
