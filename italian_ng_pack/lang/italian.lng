@@ -1,0 +1,7 @@
+##grflangid 0x27
+
+STR_GRF_NAME                 :{TITLE}
+STR_GRF_DESCRIPTION          :Questo pacchetto include rotabili a scartamento ridotto italiani.
+
+STR_FCL301_NAME                     :FCL 301 '440 Cavalli'
+STR_CARRO_FRIGO_NAME                :Carro Frigorifero

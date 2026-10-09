@@ -1,0 +1,121 @@
+grf {
+	grfid: "JC\10\26";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESCRIPTION);
+	version: 0;
+	min_compatible_version: 0;
+}
+template tmpl_vehicle_basic(x, y) {
+    [x,      y,  8, 24,  -3, -12]
+    [x +  9, y, 22, 20, -14, -12]
+    [x + 32, y, 32, 16, -16, -12]
+    [x + 65, y, 22, 20,  -6, -12]
+}
+
+template tmpl_vehicle_ng(x, y) {
+    [x,      y,  6, 17, -2, -3]
+    [x + 16, y, 14, 12, -7,  -7]
+    [x + 48, y, 20, 10, -5, -6]
+    [x + 80, y, 14, 12, 0, -4]
+    [x + 97, y,  6, 17, -2, -8]
+    [x +113, y, 14, 12, -12,  -5]
+    [x +145, y, 20, 10, -16, -7]
+    [x +177, y, 14, 12, -5, -7]
+}
+
+template tmpl_vehicle_8_views(num, reversed) {
+    tmpl_vehicle_basic(reversed ? 89 : 1, 1 + 32 * num)
+    tmpl_vehicle_basic(reversed ? 1 : 89, 1 + 32 * num)
+}
+
+//2cc general template
+template template_2cc_engines_general(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -12]
+    [x+9  , y, 22, 20, -14, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 20,  -6, -12]
+    [x+88 , y,  8, 24,  -3, -12]
+    [x+97 , y, 22, 20, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 20,  -6, -12]
+}
+
+/* Define the spritesets, these allow referring to these sprites later on */
+spriteset (fcl_301, "gfx/fcl_301.png") {  tmpl_vehicle_8_views(0, 0) }
+spriteset (carro_frigo, "gfx/carro_frigo.png") { tmpl_vehicle_ng(0, 0) }
+
+//railtypetable ng e ng_electric
+
+railtypetable {
+    NGRL,
+    ELNG
+}
+
+item(FEAT_TRAINS, item_fcl_301) {
+    property {
+        name:                         string(STR_FCL301_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1922, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 12;
+        reliability_decay:            90;
+        non_refittable_cargo_classes: bitmask();
+        cost_factor:                  35;
+        running_cost_factor:          45;
+        length:                       4;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        75 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   NGRL;
+        power:                        440 hp;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               0; 
+        weight:                       34 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.9 / 3;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_DIESEL,0, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      fcl_301;
+        //sound_effect:                 sw_fcl_301_sound;
+    }
+}
+
+item(FEAT_TRAINS, item_carro_frigo) {
+    property {
+        name:                         string(STR_CARRO_FRIGO_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1900, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            50;
+        refittable_cargo_classes:     bitmask(CC_REFRIGERATED);
+        non_refittable_cargo_classes: bitmask(CC_EXPRESS, CC_MAIL, CC_ARMOURED, CC_PASSENGERS, CC_BULK, CC_PIECE_GOODS, CC_LIQUID);
+        loading_speed:                30; 
+        cost_factor:                  7;
+        running_cost_factor:          9;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        misc_flags:                   bitmask(TRAIN_FLAG_2CC);
+        refit_cost:                   0;
+        track_type:                   NGRL;
+        ai_special_flag:              AI_FLAG_CARGO;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               14;
+        weight:                       10 ton;
+        air_drag_coefficient:         0.02;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+        length:                       6;
+    }
+    graphics {
+        default:                         carro_frigo;
+    }
+}

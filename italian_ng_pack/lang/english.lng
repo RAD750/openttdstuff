@@ -1,0 +1,7 @@
+##grflangid 0x00
+
+STR_GRF_NAME                 :{TITLE}
+STR_GRF_DESCRIPTION          :This package includes narrow gauge equipment from Italy.
+
+STR_FCL301_NAME                     :FCL 301 '440 Horsepower'
+STR_CARRO_FRIGO_NAME                :Refrigerated Car
