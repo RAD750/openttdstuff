@@ -28,13 +28,15 @@ See below for detailed info about the content
 
 |Name|Contains...|Status|
 |---|---|---|
-|Italian Electric Locomotives Pack 1|Contains the earliest generation of electric locomotives in Italy: battery, 650 V third rail, and 3600V 16,7 Hz three-phase.|:x:|
+|Italian Electric Locomotives Pack 1|Contains the earliest generation of electric locomotives in Italy: battery, 650 V third rail, and 3600V 16,7 Hz three-phase.|(beta)|
 |Italian Electric Locomotives Pack 2|Contains the second generation of electric locomotives in Italy: 3000V DC with rheostatic controls.|:heavy_check_mark:|
 |Italian Electric Locomotives Pack 3|Contains the third generation of electric locomotives in Italy: 3000V DC and 25 kV AC with DC thyristor controls.|:heavy_check_mark:|
 |Italian Electric Locomotives Pack 4|Contains the fourth generation of electric locomotives in Italy: 3000V DC and 25 kV AC with AC GTO/IGBT controls, and multivoltage locomotives.|:x:|
 |Italian Diesel Locomotives Pack|Contains diesel locomotives from Italy (all eras)|:heavy_check_mark: still in progress|
 |Italian Highspeed Pack|Contains high speed trainsets (>249 km/h)|:x:|
 |Italian Railway Coaches|Contains Italian passenger coaches (all eras)|:heavy_check_mark:|
+|Italian Narrow Gauge Pack|Contains narrow gauge rolling stock from Italy. **Narrow Gauge Infrastructure Set GRF required!**|(beta)|
+|Italian Infrastructure Pack|Contains 3000V DC, 25kV AC, 650V DC third rail, 3600V AC 16,7Hz three phase catenaries, signals and bridges|:x:|
 
 
 ### Locomotives
@@ -46,6 +48,10 @@ See below for detailed info about the content
 |D.449|Kiiw|[D.449](https://it.wikipedia.org/wiki/Locomotiva_FS_D.449)|:heavy_check_mark: :sound:|Italian Diesel Locomotives Pack|
 |D.445|Kiiw|[D.445](https://it.wikipedia.org/wiki/Locomotiva_FS_D.445)|:heavy_check_mark: :sound:|Italian Diesel Locomotives Pack|
 |D.443|Kiiw|[D.443](https://it.wikipedia.org/wiki/Locomotiva_FS_D.443)|:heavy_check_mark: :sound:|Italian Diesel Locomotives Pack|
+
+|Name|Textures by|Real life info|Status|GRF Name|
+|---|---|---|---|---|
+|FCL 301 '440 Cavalli'|lego11|Very sparse information. Also known as FIAT DE 440 HP|:heavy_check_mark: :sound:|Italian Narrow Gauge Pack|
 
 #### Electric
 |Name|Textures by|Real life info|Status|GRF Name|
@@ -69,6 +75,14 @@ See below for detailed info about the content
 |E.656 'Caimano'|lego11|[E.656](https://it.wikipedia.org/wiki/Locomotiva_FS_E.656)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
 |E.656 Navetta|lego11|[E.656](https://it.wikipedia.org/wiki/Locomotiva_FS_E.656)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
 |E.655 'Caimano'|lego11|[E.656](https://it.wikipedia.org/wiki/Locomotiva_FS_E.656)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 2|
+|E.321|lego11 adapted from Simozzz|[E.321](https://it.wikipedia.org/wiki/Locomotiva_FS_E.321)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 1|
+|E.420|lego11 adapted from VoyagerOne|[E.420](https://it.wikipedia.org/wiki/Locomotiva_FS_E.420)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 1|
+|E.220|lego11 adapted from Emperor Jake|[E.220](https://it.wikipedia.org/wiki/Locomotiva_FS_E.220)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 1|
+
+#### Battery
+|Name|Textures by|Real life info|Status|GRF Name|
+|---|---|---|---|---|
+|E.421|lego11 adapted from VoyagerOne|[E.421](https://it.wikipedia.org/wiki/Locomotiva_FS_E.421)|:heavy_check_mark: :sound:|Italian Electric Locomotives Pack 1|
 
 
 ### Multiple units and railcars
@@ -84,6 +98,9 @@ See below for detailed info about the content
 |GTW 2/6 ATR115|lego11 and Kiiw|[ATR115](https://it.wikipedia.org/wiki/Autotreno_TN_ATR_115)|:heavy_check_mark: Sound missing|Stadler GTW (Trenord ATR115/125)|
 |GTW 4/12 ATR125|lego11 and Kiiw|[ATR125](https://it.wikipedia.org/wiki/Autotreno_TN_ATR_125)|:heavy_check_mark: Sound missing|Stadler GTW (Trenord ATR115/125)|
 
+#### Diesel narrow gauge
+
+Emmina (TBD)
 
 #### Electric
 |Name|Textures by|Real life info|Status|GRF Name|
@@ -145,6 +162,12 @@ In the future, if I figure out a way to do it, your profit will take a significa
 |UIC-X luggage car|Kiiw|[UIC-X](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-X)|:heavy_check_mark:|Italian Railway Coaches|
 |UIC-Z luggage car|Kiiw|[UIC-Z1](https://it.wikipedia.org/wiki/Carrozza_FS_UIC-Z1)|:heavy_check_mark:|Italian Railway Coaches|
 |nVREC generator car (Carro Riscaldo)|lego11|[nvDREC](http://www.ferrovie.it/portale/articoli/48)|:heavy_check_mark:|Italian Railway Coaches|
+
+#### Narrow gauge freight
+
+|Name|Textures by|Real life info|Status|GRF Name|
+|---|---|---|---|---|
+|Refrigerated goods car|lego11|Just a boxcar with ice...|:heavy_check_mark:|Italian Narrow Gauge Pack|
 
 ---
 **DISCLAIMER**: I am a geology student, not a programmer and neither a pixel artist :wink:. So please apologise in advance and please report any bug :thumbsup:
