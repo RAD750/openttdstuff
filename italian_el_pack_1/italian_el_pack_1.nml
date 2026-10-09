@@ -294,11 +294,13 @@ item(FEAT_RAILTYPES) {
     }
 }
 
+
+
 item(FEAT_RAILTYPES) {
     property {
         label:                      "RAIL";
         compatible_railtype_list:   ["RAIL","ELRL","TRDL","TRDD","TRDT"];
-    	powered_railtype_list:      ["TRDL","ELRL"];                 
+    	powered_railtype_list:      ["ELRL","TRDD"];                 
     }
 }
 
