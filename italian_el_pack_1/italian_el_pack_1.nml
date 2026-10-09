@@ -165,6 +165,7 @@ item(FEAT_TRAINS, item_E420) {
         visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon:       0 ton;
         bitmask_vehicle_info:         0;
+        length: 6;
     }
     graphics {
         default:                      E421;  //le apparenze estetiche non giustificano un modello differente
@@ -199,6 +200,7 @@ item(FEAT_TRAINS, item_E321) {
         visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon:       0 ton;
         bitmask_vehicle_info:         0;
+        length: 6;
     }
     graphics {
         default:                      switch_E321_animation;
@@ -211,7 +213,6 @@ item(FEAT_TRAINS, item_E321) {
 item(FEAT_RAILTYPES) {
     property {
         label:                      "TRDL";
-
 		name:						string(STR_3RDRAIL_NAME);
 		toolbar_caption:			string(STR_3RDRAIL_TOOLBAR);
 		menu_text:					string(STR_3RDRAIL_MENU);
@@ -220,7 +221,7 @@ item(FEAT_RAILTYPES) {
 		new_engine_text:			string(STR_3RDRAIL_NEW_ENGINE);
 		introduction_date:  		date(1900,1,1);
         compatible_railtype_list:   ["TRDD","TRDL","RAIL","TRDT"];          
-		powered_railtype_list:      ["TRDD","TRDL", "TRDT"];                 
+		powered_railtype_list:      ["TRDD","TRDL","TRDT"];                 
         curve_speed_multiplier:     1;         
         construction_cost:          11;        
 		maintenance_cost: 			11;
@@ -238,7 +239,6 @@ item(FEAT_RAILTYPES) {
 item(FEAT_RAILTYPES) {
     property {
         label:                      "TRDD";
-
 		name:						string(STR_3RDRAIL_DC_NAME);
 		toolbar_caption:			string(STR_3RDRAIL_DC_TOOLBAR);
 		menu_text:					string(STR_3RDRAIL_DC_MENU);
@@ -300,15 +300,23 @@ item(FEAT_RAILTYPES) {
     property {
         label:                      "RAIL";
         compatible_railtype_list:   ["RAIL","ELRL","TRDL","TRDD","TRDT"];
-    	powered_railtype_list:      ["ELRL","TRDD"];                 
+    	powered_railtype_list:      ["ELRL","TRDL","TRDD","TRDT"];                 
     }
 }
 
 item(FEAT_RAILTYPES) {
     property {
         label:                      "ELRL";
-        compatible_railtype_list:   ["TRDD", "RAIL","ELRL"];          
-	    powered_railtype_list:      ["TRDD", "ELRL"];                 
+        compatible_railtype_list:   ["TRDD","RAIL","ELRL"];          
+	    powered_railtype_list:      ["TRDD","ELRL"];                 
+    }
+}
+
+item(FEAT_RAILTYPES) {
+    property {
+        label:                      "TRDL";
+        compatible_railtype_list:   ["TRDL","RAIL"];          
+	    powered_railtype_list:      ["TRDL"];                 
     }
 }
 
