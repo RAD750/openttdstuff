@@ -196,7 +196,7 @@ item(FEAT_TRAINS, item_E321) {
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
-        tractive_effort_coefficient:  0.15 / 3;
+        tractive_effort_coefficient:  0.25 / 3;
         visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon:       0 ton;
         bitmask_vehicle_info:         0;
