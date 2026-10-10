@@ -1,0 +1,270 @@
+grf {
+	grfid: "JC\1A\26";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESCRIPTION);
+	version: 0;
+	min_compatible_version: 0;
+}
+template tmpl_vehicle_basic(x, y) {
+    [x,      y,  8, 24,  -3, -12]
+    [x +  9, y, 22, 20, -14, -12]
+    [x + 32, y, 32, 16, -16, -12]
+    [x + 65, y, 22, 20,  -6, -12]
+}
+template tmpl_vehicle_8_views(num, reversed) {
+    tmpl_vehicle_basic(reversed ? 89 : 1, 1 + 32 * num)
+    tmpl_vehicle_basic(reversed ? 1 : 89, 1 + 32 * num)
+}
+
+//WARNING: Most of this GRF has been extracted from the 2ccset. it's here just for convenience, I don't claim ownership of this code nor the graphics.
+
+//2cc general template
+template template_2cc_engines_general(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -12]
+    [x+9  , y, 22, 20, -14, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 20,  -6, -12]
+    [x+88 , y,  8, 24,  -3, -12]
+    [x+97 , y, 22, 20, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 20,  -6, -12]
+}
+
+railtypetable {
+    RAIL
+}
+
+//Gr480
+
+// VEHICLE
+/// Engine1
+spriteset(spriteset_gr480_engine1, "gfx/FS_480.png") {template_2cc_engines_general(1, 1)}
+
+
+/// Engine2
+spriteset(spriteset_gr480_engine2, "gfx/FS_480.png") {template_2cc_engines_general(1, 32)}
+
+
+/// Tender
+spriteset(spriteset_gr480_tender, "gfx/FS_480.png") {template_2cc_engines_general(1, 64)}
+
+
+/// Animation states (animation)
+switch(FEAT_TRAINS, SELF, switch_gr480_animation, motion_counter % 2){
+	0: spriteset_gr480_engine1;
+	spriteset_gr480_engine2;
+}
+switch(FEAT_TRAINS, SELF, switch_gr480_position, position_in_vehid_chain % 2) {
+	0: switch_gr480_animation;
+	spriteset_gr480_tender;
+}
+
+/// Visual Effect
+switch(FEAT_TRAINS, SELF, switch_gr480_visual_effect, position_in_vehid_chain % 2) {
+	0: return visual_effect_and_powered(VISUAL_EFFECT_STEAM, -3, DISABLE_WAGON_POWER);
+	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+
+/// Length
+switch(FEAT_TRAINS, SELF, switch_gr480_length, position_in_vehid_chain % 2) {
+    0: 6;
+	4;
+}
+
+/// Articulated Return
+/// extra_callback_info1 is the index of the part being added.
+switch(FEAT_TRAINS, SELF, switch_gr480_articulated, extra_callback_info1) {
+    1: return item_gr480;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item(FEAT_TRAINS, item_gr480) {
+    property {
+        name: string(STR_GR480_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date: date(1923,1,1);
+        model_life: 45;
+        vehicle_life: 45;
+        retire_early: 20;
+        cost_factor: 53.03;
+        running_cost_factor: 42.23;
+        speed: 70 km/h;
+        power: 1500 hp;
+        cargo_capacity: 0;
+        weight: 128 ton;
+        tractive_effort_coefficient: 0.14;
+        air_drag_coefficient: 0;
+
+        reliability_decay: 20;
+        // cargodeftype: NONE;
+        refittable_cargo_classes: bitmask(NO_CARGO_CLASS);
+        
+        misc_flags: bitmask(TRAIN_FLAG_2CC);
+        refit_cost: 0;
+        ai_special_flag: AI_FLAG_PASSENGER | AI_FLAG_CARGO;
+        track_type: RAIL;
+        running_cost_base: RUNNING_COST_STEAM;
+        engine_class: ENGINE_CLASS_STEAM;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_STEAM, 0, DISABLE_WAGON_POWER);
+
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        dual_headed: 0;
+        length: 6;
+        extra_power_per_wagon: 0;
+        bitmask_vehicle_info: 0;
+
+    }
+    graphics {
+        visual_effect_and_powered: switch_gr480_visual_effect;
+        length: switch_gr480_length;
+        articulated_part: switch_gr480_articulated;
+        default: switch_gr480_position;
+    }
+}
+
+//Gr 691
+
+// VEHICLE
+/// Engine1
+spriteset(spriteset_gr691_engine1, "gfx/FS_691.png") {template_2cc_engines_general(1, 1)}
+
+
+/// Engine2
+spriteset(spriteset_gr691_engine2, "gfx/FS_691.png") {template_2cc_engines_general(1, 32)}
+
+
+/// Tender
+spriteset(spriteset_gr691_tender, "gfx/FS_691.png") {template_2cc_engines_general(1, 64)}
+
+
+/// Animation states (animation)
+switch(FEAT_TRAINS, SELF, switch_gr691_animation, motion_counter % 2){
+	0: spriteset_gr691_engine1;
+	spriteset_gr691_engine2;
+}
+switch(FEAT_TRAINS, SELF, switch_gr691_position, position_in_vehid_chain % 2) {
+	0: switch_gr691_animation;
+	spriteset_gr691_tender;
+}
+
+/// Visual Effect
+switch(FEAT_TRAINS, SELF, switch_gr691_visual_effect, position_in_vehid_chain % 2) {
+	0: return visual_effect_and_powered(VISUAL_EFFECT_STEAM, -3, DISABLE_WAGON_POWER);
+	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+
+/// Length
+switch(FEAT_TRAINS, SELF, switch_gr691_length, position_in_vehid_chain % 2) {
+    0: 6;
+	4;
+}
+
+/// Articulated Return
+/// extra_callback_info1 is the index of the part being added.
+switch(FEAT_TRAINS, SELF, switch_gr691_articulated, extra_callback_info1) {
+    1: return item_gr691;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_gr691) {
+    property {
+        name: string(STR_GR691_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date: date(1928,1,1);
+        model_life: 45;
+        vehicle_life: 32;
+        retire_early: 20;
+        cost_factor: 56.8;
+        running_cost_factor: 48.03;
+        speed: 130 km/h;
+        power: 1750 hp;
+        cargo_capacity: 0;
+        weight: 144 ton;
+        tractive_effort_coefficient: 0.103;
+        air_drag_coefficient: 0;
+
+        reliability_decay: 20;
+        // cargodeftype: NONE;
+        refittable_cargo_classes: bitmask(NO_CARGO_CLASS);
+        
+        cargo_age_period: 185;
+        misc_flags: bitmask(TRAIN_FLAG_2CC);
+        refit_cost: 0;
+        ai_special_flag: AI_FLAG_PASSENGER | AI_FLAG_CARGO;
+        track_type: RAIL;
+        running_cost_base: RUNNING_COST_STEAM;
+        engine_class: ENGINE_CLASS_STEAM;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_STEAM, 0, DISABLE_WAGON_POWER);
+
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        dual_headed: 0;
+        length: 6;
+        extra_power_per_wagon: 0;
+        bitmask_vehicle_info: 0;
+    }
+    graphics {
+        visual_effect_and_powered: switch_gr691_visual_effect;
+        length: switch_gr691_length;
+        articulated_part: switch_gr691_articulated;
+        default: switch_gr691_position;
+    }
+}
+
+//Gr 880
+
+// VEHICLE
+/// Engine1
+spriteset(spriteset_gr880_engine1, "gfx/FS_880.png") {template_2cc_engines_general(1, 1)}
+
+
+/// Engine2
+spriteset(spriteset_gr880_engine2, "gfx/FS_880.png") {template_2cc_engines_general(1, 32)}
+
+
+/// Animation states (animation)
+switch(FEAT_TRAINS, SELF, switch_gr880_animation, motion_counter % 2){
+	0: spriteset_gr880_engine1;
+	spriteset_gr880_engine2;
+}
+
+item(FEAT_TRAINS, item_gr880) {
+    property {
+        name: string(STR_GR880_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date: date(1916,1,1);
+        model_life: 45;
+        vehicle_life: 62;
+        retire_early: 20;
+        cost_factor: 32.87;
+        running_cost_factor: 27.55;
+        speed: 75 km/h;
+        power: 540 hp;
+        cargo_capacity: 0;
+        weight: 92 ton;
+        tractive_effort_coefficient: 0.2;
+        air_drag_coefficient: 0;
+
+        reliability_decay: 20;
+        refittable_cargo_classes: bitmask(NO_CARGO_CLASS);
+        
+        misc_flags: bitmask(TRAIN_FLAG_2CC);
+        refit_cost: 0;
+        ai_special_flag: AI_FLAG_PASSENGER | AI_FLAG_CARGO;
+        track_type: RAIL;
+        running_cost_base: RUNNING_COST_STEAM;
+        engine_class: ENGINE_CLASS_STEAM;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_STEAM, -3, DISABLE_WAGON_POWER);
+
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        dual_headed: 0;
+        length: 6;
+        extra_power_per_wagon: 0;
+        bitmask_vehicle_info: 0;
+
+    }
+    graphics {
+        default: switch_gr880_animation;
+    }
+}

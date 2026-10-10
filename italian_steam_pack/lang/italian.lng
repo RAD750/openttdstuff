@@ -1,0 +1,8 @@
+##grflangid 0x27
+
+STR_GRF_NAME                 :{TITLE}
+STR_GRF_DESCRIPTION          :Questo pacchetto include locomotive a vapore italiane.
+
+STR_GR480_NAME               :Gr. 480
+STR_GR691_NAME               :Gr. 691
+STR_GR880_NAME               :Gr. 880
