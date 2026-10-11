@@ -4,4 +4,6 @@ STR_GRF_NAME                 :{TITLE}
 STR_GRF_DESCRIPTION          :This package includes narrow gauge equipment from Italy.
 
 STR_FCL301_NAME                     :FCL 301 '440 Horsepower'
+STR_FGC_LOC29_NAME                  :FAA TIBB 'Tipo 1924'
+STR_FGC_A2_NAME                     :TIBB 'Unificata' Motor Car
 STR_CARRO_FRIGO_NAME                :Refrigerated Car
